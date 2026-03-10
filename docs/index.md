@@ -26,13 +26,13 @@ The homelab runs on a high-performance, small-form-factor host designed for 24/7
 
 | Component | Specification |
 | :--- | :--- |
-| **Host System** | Mac Studio (2022) |
-| **Processor** | Apple M1 Max (10-core CPU, 24-core GPU) |
-| **Memory** | 32 GB Unified Memory |
-| **Primary Storage** | 512 GB NVMe SSD (System & Configurations) |
-| **External Storage** | 12 TB RAID Array (Media & Long-term Backups) |
+| **Host System** | Mac mini (M4, 2024) |
+| **Processor** | Apple M4 (10-core CPU, 10-core GPU) |
+| **Memory** | 16 GB Unified Memory |
+| **Primary Storage** | 256 GB NVMe SSD (System & Configurations) |
+| **External Storage** | 1 TB Dedicated Volume (`/Volumes/homelab`) |
 | **Virtualization** | Docker Desktop (VirtioFS enabled for I/O performance) |
-| **Host OS** | macOS Sonoma 14.x |
+| **Host OS** | macOS 15.3.1 |
 
 ---
 
