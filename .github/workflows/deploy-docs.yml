@@ -4,9 +4,14 @@ on:
     branches:
       - main
     paths:
-      - "docs/**"
-      - "mkdocs.yml"
-      - ".github/workflows/deploy-docs.yml"
+      - 'docs/**'
+      - 'mkdocs.yml'
+      - '.github/workflows/deploy-docs.yml'
+
+# Cancel in-progress runs when a new push is made
+concurrency:
+  group: pages
+  cancel-in-progress: true
 
 permissions:
   contents: write
