@@ -890,10 +890,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#lets-encrypt-certificate-failures" class="md-nav__link">
+  <a href="#ssl-certificate-failures" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Let's Encrypt Certificate Failures
+        SSL Certificate Failures
       
     </span>
   </a>
@@ -918,10 +918,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#monitoring-stack-memory-pressure" class="md-nav__link">
+  <a href="#monitoring-stack-resource-pressure" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Monitoring Stack Memory Pressure
+        Monitoring Stack Resource Pressure
       
     </span>
   </a>
@@ -929,10 +929,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#media-automation-post-import-failures" class="md-nav__link">
+  <a href="#media-automation-failures" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Media Automation Post-Import Failures
+        Media Automation Failures
       
     </span>
   </a>
@@ -1021,10 +1021,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#lets-encrypt-certificate-failures" class="md-nav__link">
+  <a href="#ssl-certificate-failures" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Let's Encrypt Certificate Failures
+        SSL Certificate Failures
       
     </span>
   </a>
@@ -1049,10 +1049,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#monitoring-stack-memory-pressure" class="md-nav__link">
+  <a href="#monitoring-stack-resource-pressure" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Monitoring Stack Memory Pressure
+        Monitoring Stack Resource Pressure
       
     </span>
   </a>
@@ -1060,10 +1060,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#media-automation-post-import-failures" class="md-nav__link">
+  <a href="#media-automation-failures" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Media Automation Post-Import Failures
+        Media Automation Failures
       
     </span>
   </a>
@@ -1100,34 +1100,34 @@
 <h2 id="infrastructure-issues">🛠️ Infrastructure Issues<a class="headerlink" href="#infrastructure-issues" title="Permanent link">&para;</a></h2>
 <h3 id="tailscale-connection-failures"><strong>Tailscale Connection Failures</strong><a class="headerlink" href="#tailscale-connection-failures" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>Symptom</strong>: Internal hostnames (<code>grafana.ts.debdut.in</code>) don't resolve.</li>
-<li><strong>Resolution</strong>: Ensure your device is logged into the Tailnet and MagicDNS is enabled in the Tailscale admin console.</li>
+<li><strong>Symptom</strong>: Internal hostnames don't resolve.</li>
+<li><strong>Resolution</strong>: Ensure your device is logged into the Tailnet and MagicDNS is enabled.</li>
 <li><strong>Check</strong>: Run <code>tailscale status</code> in the terminal to verify your connection.</li>
 </ul>
 <h3 id="docker-network-conflicts"><strong>Docker Network Conflicts</strong><a class="headerlink" href="#docker-network-conflicts" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>Symptom</strong>: Containers fail to start with a "network already exists" error.</li>
-<li><strong>Resolution</strong>: Run <code>make clean</code> to stop all services and remove the homelab bridge network.</li>
-<li><strong>Check</strong>: Verify with <code>docker network ls</code> to see if there are any orphan homelab networks.</li>
+<li><strong>Resolution</strong>: Perform a full cleanup to reset the bridge network.</li>
+<li><strong>Check</strong>: Use Docker's networking commands to identify orphan homelab networks.</li>
 </ul>
-<h3 id="lets-encrypt-certificate-failures"><strong>Let's Encrypt Certificate Failures</strong><a class="headerlink" href="#lets-encrypt-certificate-failures" title="Permanent link">&para;</a></h3>
+<h3 id="ssl-certificate-failures"><strong>SSL Certificate Failures</strong><a class="headerlink" href="#ssl-certificate-failures" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>Symptom</strong>: Nginx Proxy Manager (NPM) fails to renew SSL certificates.</li>
-<li><strong>Resolution</strong>: Ensure that ports 80 and 443 are correctly routed into the NPM container.</li>
-<li><strong>Check</strong>: Verify the NPM logs with <code>make logs nginx-proxy-manager</code>.</li>
+<li><strong>Symptom</strong>: Reverse Proxy fails to renew certificates.</li>
+<li><strong>Resolution</strong>: Ensure the reverse proxy container can access external renewal services.</li>
+<li><strong>Check</strong>: Verify logs for renewal errors.</li>
 </ul>
 <h2 id="service-specific-issues">⚙️ Service-Specific Issues<a class="headerlink" href="#service-specific-issues" title="Permanent link">&para;</a></h2>
-<h3 id="monitoring-stack-memory-pressure"><strong>Monitoring Stack Memory Pressure</strong><a class="headerlink" href="#monitoring-stack-memory-pressure" title="Permanent link">&para;</a></h3>
+<h3 id="monitoring-stack-resource-pressure"><strong>Monitoring Stack Resource Pressure</strong><a class="headerlink" href="#monitoring-stack-resource-pressure" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>Symptom</strong>: Prometheus or Loki containers are frequently OOMKilled.</li>
-<li><strong>Resolution</strong>: Increase the memory limits in <code>monitoring/compose.yaml</code> and restart the stack.</li>
-<li><strong>Check</strong>: Use <code>docker stats</code> to monitor the real-time resource usage of each container.</li>
+<li><strong>Symptom</strong>: Monitoring containers are frequently restarted.</li>
+<li><strong>Resolution</strong>: Adjust resource limits in the orchestration configuration.</li>
+<li><strong>Check</strong>: Use container statistics to monitor real-time memory and CPU usage.</li>
 </ul>
-<h3 id="media-automation-post-import-failures"><strong>Media Automation Post-Import Failures</strong><a class="headerlink" href="#media-automation-post-import-failures" title="Permanent link">&para;</a></h3>
+<h3 id="media-automation-failures"><strong>Media Automation Failures</strong><a class="headerlink" href="#media-automation-failures" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>Symptom</strong>: <code>mkv2mp4.py</code> scripts fail to run after a download completes.</li>
-<li><strong>Resolution</strong>: Ensure that the Python environment and dependencies are correctly installed in the Servarr stack.</li>
-<li><strong>Check</strong>: Verify the Sonarr/Radarr logs for post-import script execution errors.</li>
+<li><strong>Symptom</strong>: Post-processing fails to run after a download completes.</li>
+<li><strong>Resolution</strong>: Ensure the post-import environment and dependencies are correctly initialized.</li>
+<li><strong>Check</strong>: Verify service-specific logs for post-import execution errors.</li>
 </ul>
 
 

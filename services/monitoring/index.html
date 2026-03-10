@@ -538,10 +538,11 @@
     P -- Query --&gt; G
 </div>
 <h2 id="alerting">🚨 Alerting<a class="headerlink" href="#alerting" title="Permanent link">¶</a></h2>
-<p>Alerts are defined in <code>monitoring/grafana/provisioning/alerting/alerting.yml</code> and are routed via <strong>Apprise</strong> to Telegram.</p>
+<p>Alerting is handled through centralized configuration files that are automatically provisioned into Grafana.</p>
 <ul>
-<li><strong>High CPU/Memory</strong>: Triggers if a container exceeds 90 0x0p+0llocation for 5 minutes.</li>
+<li><strong>High CPU/Memory</strong>: Triggers if a container exceeds 90% allocation for 5 minutes.</li>
 <li><strong>Service Down</strong>: Triggers if a healthcheck fails for 2 consecutive polls.</li>
+<li><strong>Notification Routing</strong>: Alerts are routed via <strong>Apprise</strong> to Telegram.</li>
 </ul>
 </article>
 </div>

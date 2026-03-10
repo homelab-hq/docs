@@ -990,7 +990,7 @@
 <h2 id="jellyfin">🎞️ Jellyfin<a class="headerlink" href="#jellyfin" title="Permanent link">&para;</a></h2>
 <p><strong>Jellyfin</strong> is the centerpiece of the media stack, providing an open-source, private alternative to Plex or Emby.</p>
 <ul>
-<li><strong>Storage</strong>: Media is mounted from a dedicated external volume: <code>/Volumes/homelab/streaming/media</code>.</li>
+<li><strong>Storage</strong>: Media is mounted from a dedicated, secure storage volume.</li>
 <li><strong>Transcoding</strong>: Configured to use hardware acceleration (where available) to support multiple remote streams.</li>
 <li><strong>Client Support</strong>: Fully accessible via standard Jellyfin apps on iOS, Android, and Smart TVs over the Tailscale tunnel.</li>
 </ul>
@@ -1023,9 +1023,10 @@
 </tbody>
 </table>
 <h2 id="post-processing">⚙️ Post-Processing<a class="headerlink" href="#post-processing" title="Permanent link">&para;</a></h2>
-<p>A custom Python utility, <code>mkv2mp4.py</code>, handles remuxing of downloaded media:
+<p>A custom utility handles the remuxing of downloaded media:
 - <strong>Remuxing</strong>: Losslessly converts MKV to MP4 (copying codecs).
-- <strong>Automation</strong>: Triggered via Sonarr/Radarr post-import scripts to ensure maximum compatibility with streaming clients.</p>
+- <strong>Automation</strong>: Triggered via post-import scripts to ensure maximum compatibility with streaming clients.
+- <strong>Notification</strong>: Alerts the user when new media is ready for playback.</p>
 
 
 

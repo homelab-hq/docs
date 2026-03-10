@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#infrastructure-management-makefile-api" class="md-skip">
+        <a href="#infrastructure-management-cli-api" class="md-skip">
           Skip to content
         </a>
       
@@ -830,10 +830,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#commands" class="md-nav__link">
+  <a href="#key-commands" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🚀 Commands
+        🚀 Key Commands
       
     </span>
   </a>
@@ -875,10 +875,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#follow-logs-for-all-monitoring" class="md-nav__link">
+  <a href="#follow-logs-for-all-monitoring-components" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Follow Logs for All Monitoring
+        Follow Logs for All Monitoring Components
       
     </span>
   </a>
@@ -972,10 +972,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#commands" class="md-nav__link">
+  <a href="#key-commands" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🚀 Commands
+        🚀 Key Commands
       
     </span>
   </a>
@@ -1017,10 +1017,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#follow-logs-for-all-monitoring" class="md-nav__link">
+  <a href="#follow-logs-for-all-monitoring-components" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Follow Logs for All Monitoring
+        Follow Logs for All Monitoring Components
       
     </span>
   </a>
@@ -1063,9 +1063,9 @@
   
 
 
-<h1 id="infrastructure-management-makefile-api">Infrastructure Management (Makefile API)<a class="headerlink" href="#infrastructure-management-makefile-api" title="Permanent link">&para;</a></h1>
-<p>The <strong>Makefile</strong> in the root of the project provides a unified, industry-standard CLI for managing the entire homelab stack.</p>
-<h2 id="commands">🚀 Commands<a class="headerlink" href="#commands" title="Permanent link">&para;</a></h2>
+<h1 id="infrastructure-management-cli-api">Infrastructure Management (CLI API)<a class="headerlink" href="#infrastructure-management-cli-api" title="Permanent link">&para;</a></h1>
+<p>The infrastructure is managed through a unified CLI, providing an industry-standard interface for all lifecycle operations.</p>
+<h2 id="key-commands">🚀 Key Commands<a class="headerlink" href="#key-commands" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -1078,42 +1078,32 @@
 <tr>
 <td style="text-align: left;"><strong>make up</strong></td>
 <td style="text-align: left;">Start</td>
-<td style="text-align: left;">Starts Tailscale first, then infrastructure, then services.</td>
+<td style="text-align: left;">Initiates the infrastructure in dependency order.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>make down</strong></td>
 <td style="text-align: left;">Stop</td>
-<td style="text-align: left;">Gracefully stops all services and infrastructure in reverse order.</td>
+<td style="text-align: left;">Gracefully stops all services and infrastructure.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>make restart</strong></td>
 <td style="text-align: left;">Reset</td>
-<td style="text-align: left;">Performs a full <code>make down</code> followed by <code>make up</code>.</td>
+<td style="text-align: left;">Performs a full cycle: down followed by up.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>make status</strong></td>
 <td style="text-align: left;">Health</td>
-<td style="text-align: left;">Shows combined health status of all homelab containers.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>make pull</strong></td>
-<td style="text-align: left;">Update</td>
-<td style="text-align: left;">Pulls the latest images for all submodules.</td>
+<td style="text-align: left;">Shows combined health telemetry of all containers.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>make update</strong></td>
 <td style="text-align: left;">Full Update</td>
-<td style="text-align: left;">Performs a <code>make pull</code> followed by <code>make restart</code>.</td>
+<td style="text-align: left;">Pulls latest images and performs a rolling restart.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>make logs</strong></td>
 <td style="text-align: left;">Observability</td>
-<td style="text-align: left;">Aggregates logs from all submodules into a single stream.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>make clean</strong></td>
-<td style="text-align: left;">Cleanup</td>
-<td style="text-align: left;">Stops all services and removes the homelab network.</td>
+<td style="text-align: left;">Aggregates logs from across all service layers.</td>
 </tr>
 </tbody>
 </table>
@@ -1122,16 +1112,16 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>make<span class="w"> </span>up
 </code></pre></div>
 <h3 id="restart-a-specific-service"><strong>Restart a Specific Service</strong><a class="headerlink" href="#restart-a-specific-service" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>make<span class="w"> </span>restart<span class="w"> </span>glance
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>make<span class="w"> </span>restart<span class="w"> </span>&lt;service_name&gt;
 </code></pre></div>
-<h3 id="follow-logs-for-all-monitoring"><strong>Follow Logs for All Monitoring</strong><a class="headerlink" href="#follow-logs-for-all-monitoring" title="Permanent link">&para;</a></h3>
+<h3 id="follow-logs-for-all-monitoring-components"><strong>Follow Logs for All Monitoring Components</strong><a class="headerlink" href="#follow-logs-for-all-monitoring-components" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>make<span class="w"> </span>logs<span class="w"> </span>monitoring
 </code></pre></div>
 <h2 id="advanced-features">⚙️ Advanced Features<a class="headerlink" href="#advanced-features" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Dependency Order</strong>: The <code>make up</code> target is designed to start <strong>Tailscale</strong> and other critical infrastructure before application-level services.</li>
-<li><strong>Service-Specific Commands</strong>: Most commands (like <code>up</code>, <code>down</code>, <code>logs</code>) support an optional service argument for surgical operations.</li>
-<li><strong>Color-Coded Output</strong>: Provides clear, visual feedback on the success or failure of each management step.</li>
+<li><strong>Dependency Order</strong>: Critical infrastructure (Tailscale, Nginx Proxy Manager) is prioritized before application layers.</li>
+<li><strong>Service-Specific Control</strong>: Most commands support an optional service argument for surgical operations.</li>
+<li><strong>Visual Feedback</strong>: Provides color-coded, real-time output for all management steps.</li>
 </ul>
 
 

@@ -1003,7 +1003,7 @@
 
 
 <h1 id="security-model">Security Model<a class="headerlink" href="#security-model" title="Permanent link">&para;</a></h1>
-<p>The security of this homelab is built on a <strong>Zero-Trust Networking Architecture</strong>. This means we do not trust any network by default—even our local home network—and we rely on verified identity and encryption for all communications.</p>
+<p>The security of this homelab is built on a <strong>Zero-Trust Networking Architecture</strong>. This ensures that we do not trust any network by default—even our local home network—and we rely on verified identity and encryption for all communications.</p>
 <h2 id="core-security-principles">🛡️ Core Security Principles<a class="headerlink" href="#core-security-principles" title="Permanent link">&para;</a></h2>
 <ol>
 <li><strong>Zero Attack Surface</strong>: No ports are forwarded on the internet-facing router. All inbound traffic must pass through an encrypted VPN tunnel.</li>
@@ -1015,22 +1015,22 @@
 <h2 id="network-layer-security-tailscale">🔒 Network Layer Security (Tailscale)<a class="headerlink" href="#network-layer-security-tailscale" title="Permanent link">&para;</a></h2>
 <p>By using Tailscale, we eliminate the need for traditional VPN servers (like OpenVPN or IPsec) and their associated vulnerabilities.</p>
 <ul>
-<li><strong>MagicDNS</strong>: Internal services are accessed via human-readable hostnames (e.g., <code>grafana.ts.debdut.in</code>) that only resolve within the private mesh.</li>
+<li><strong>MagicDNS</strong>: Internal services are accessed via human-readable hostnames that only resolve within the private mesh.</li>
 <li><strong>ACL Policies</strong>: Tailscale Access Control Lists (ACLs) can restrict which devices can talk to each other, even within the mesh.</li>
-<li><strong>HTTPS inside the Tunnel</strong>: We use Nginx Proxy Manager to provide valid SSL/TLS certificates for internal hostnames, ensuring traffic is encrypted even <em>after</em> it leaves the WireGuard tunnel.</li>
+<li><strong>HTTPS inside the Tunnel</strong>: We use a Reverse Proxy to provide valid SSL/TLS certificates for internal hostnames, ensuring traffic is encrypted even <em>after</em> it leaves the WireGuard tunnel.</li>
 </ul>
 <h2 id="secrets-management">🔑 Secrets Management<a class="headerlink" href="#secrets-management" title="Permanent link">&para;</a></h2>
 <p>We use a "Clean Repository" strategy to ensure that no sensitive data (API keys, passwords, tokens) is ever committed to version control.</p>
 <ul>
-<li><strong><code>.envrc</code> (direnv)</strong>: All environment variables are stored in a local <code>.envrc</code> file, which is ignored by Git.</li>
-<li><strong>Consolidated Templates</strong>: A public <code>.envrc.example</code> provides the structure of required variables without exposing actual values.</li>
-<li><strong>Docker Secrets (Interpolation)</strong>: Docker Compose files use <code>${VARIABLE_NAME}</code> interpolation, ensuring that secrets are only loaded at runtime from the host's environment.</li>
+<li><strong>Dynamic Environment Loading</strong>: All sensitive environment variables are loaded dynamically into the shell and injected into the container at runtime.</li>
+<li><strong>Consolidated Templates</strong>: Publicly available templates provide the structure of required variables without exposing actual values.</li>
+<li><strong>Container Isolation</strong>: Docker Compose files use variable interpolation, ensuring that secrets are only loaded from the host's protected environment.</li>
 </ul>
 <h2 id="disaster-recovery-backups">🛡️ Disaster Recovery &amp; Backups<a class="headerlink" href="#disaster-recovery-backups" title="Permanent link">&para;</a></h2>
 <p>Security isn't just about preventing access—it's also about ensuring data integrity.</p>
 <ul>
-<li><strong>Nginx Proxy Manager Backups</strong>: A <code>hosts_backup.json</code> is maintained to quickly recreate the reverse proxy mapping.</li>
-<li><strong>Configuration as Code</strong>: All service configurations (Prometheus YAML, Grafana Provisioning) are version-controlled, allowing the entire stack to be recreated from scratch in minutes.</li>
+<li><strong>Configuration Backups</strong>: Periodic snapshots of the reverse proxy mappings and database states are maintained off-site.</li>
+<li><strong>Infrastructure as Code</strong>: All service configurations (Prometheus YAML, Grafana Provisioning) are version-controlled, allowing the entire stack to be recreated from scratch in minutes.</li>
 </ul>
 <hr />
 <div class="admonition success">
