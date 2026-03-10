@@ -48,6 +48,32 @@ graph BT
     LogicLayer --> DataLayer
 ```
 
+---
+
+## 🔄 The Life of a Request
+
+Understanding how a request from a remote device (e.g., your phone on 5G) reaches a private service without any open ports.
+
+```mermaid
+sequenceDiagram
+    participant U as User Device (Mobile/Laptop)
+    participant T1 as Tailscale Node (Client)
+    participant T2 as Tailscale Gateway (Homelab)
+    participant NPM as Nginx Proxy Manager
+    participant S as Private Service (e.g., Grafana)
+
+    U->>T1: Open browser to grafana.ts.debdut.in
+    T1->>T1: Resolve hostname via MagicDNS
+    T1->>T2: Establish WireGuard tunnel (Encrypted)
+    T2->>NPM: Forward request over internal Docker bridge
+    NPM->>NPM: Terminate SSL & route by hostname
+    NPM->>S: Proxy HTTP request
+    S-->>NPM: 200 OK (Response)
+    NPM-->>T2: Encrypt response
+    T2-->>T1: Secure transmission
+    T1-->>U: Render Dashboard
+```
+
 ## 🛠️ Unified Management
 
 Management of the entire stack is handled through a centralized Command Line Interface (CLI). This interface abstracts the complexity of individual container operations into high-level lifecycle commands:

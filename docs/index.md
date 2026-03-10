@@ -20,14 +20,19 @@ Our infrastructure is built on four core pillars:
 3.  **Infrastructure as Code**: Everything is containerized and managed via `docker compose` with a unified `Makefile` API.
 4.  **Observability**: A full Prometheus/Grafana stack for real-time monitoring and alerting.
 
-## 🛠️ Tech Stack
+## 💻 Hardware & Host Environment
 
-- **Host OS**: macOS / Linux (Docker Desktop / Engine)
-- **Container Orchestration**: Docker Compose
-- **VPN / Overlay Network**: Tailscale
-- **Monitoring**: Prometheus, Grafana, Loki, Promtail, Beyla
-- **Automation**: Apprise, Bridge (custom service)
-- **Media**: Jellyfin, Servarr Stack
+The homelab runs on a high-performance, small-form-factor host designed for 24/7 reliability and silent operation.
+
+| Component | Specification |
+| :--- | :--- |
+| **Host System** | Mac Studio (2022) |
+| **Processor** | Apple M1 Max (10-core CPU, 24-core GPU) |
+| **Memory** | 32 GB Unified Memory |
+| **Primary Storage** | 512 GB NVMe SSD (System & Configurations) |
+| **External Storage** | 12 TB RAID Array (Media & Long-term Backups) |
+| **Virtualization** | Docker Desktop (VirtioFS enabled for I/O performance) |
+| **Host OS** | macOS Sonoma 14.x |
 
 ---
 
