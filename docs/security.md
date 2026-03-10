@@ -1,6 +1,6 @@
 # Security Model
 
-The security of this homelab is built on a **Zero-Trust Networking Architecture**. This means we do not trust any network by default—even our local home network—and we rely on verified identity and encryption for all communications.
+The security of this homelab is built on a **Zero-Trust Networking Architecture**. This ensures that we do not trust any network by default—even our local home network—and we rely on verified identity and encryption for all communications.
 
 ## 🛡️ Core Security Principles
 
@@ -15,24 +15,24 @@ The security of this homelab is built on a **Zero-Trust Networking Architecture*
 
 By using Tailscale, we eliminate the need for traditional VPN servers (like OpenVPN or IPsec) and their associated vulnerabilities.
 
--   **MagicDNS**: Internal services are accessed via human-readable hostnames (e.g., `grafana.ts.debdut.in`) that only resolve within the private mesh.
+-   **MagicDNS**: Internal services are accessed via human-readable hostnames that only resolve within the private mesh.
 -   **ACL Policies**: Tailscale Access Control Lists (ACLs) can restrict which devices can talk to each other, even within the mesh.
--   **HTTPS inside the Tunnel**: We use Nginx Proxy Manager to provide valid SSL/TLS certificates for internal hostnames, ensuring traffic is encrypted even *after* it leaves the WireGuard tunnel.
+-   **HTTPS inside the Tunnel**: We use a Reverse Proxy to provide valid SSL/TLS certificates for internal hostnames, ensuring traffic is encrypted even *after* it leaves the WireGuard tunnel.
 
 ## 🔑 Secrets Management
 
 We use a "Clean Repository" strategy to ensure that no sensitive data (API keys, passwords, tokens) is ever committed to version control.
 
--   **`.envrc` (direnv)**: All environment variables are stored in a local `.envrc` file, which is ignored by Git.
--   **Consolidated Templates**: A public `.envrc.example` provides the structure of required variables without exposing actual values.
--   **Docker Secrets (Interpolation)**: Docker Compose files use `${VARIABLE_NAME}` interpolation, ensuring that secrets are only loaded at runtime from the host's environment.
+-   **Dynamic Environment Loading**: All sensitive environment variables are loaded dynamically into the shell and injected into the container at runtime.
+-   **Consolidated Templates**: Publicly available templates provide the structure of required variables without exposing actual values.
+-   **Container Isolation**: Docker Compose files use variable interpolation, ensuring that secrets are only loaded from the host's protected environment.
 
 ## 🛡️ Disaster Recovery & Backups
 
 Security isn't just about preventing access—it's also about ensuring data integrity.
 
--   **Nginx Proxy Manager Backups**: A `hosts_backup.json` is maintained to quickly recreate the reverse proxy mapping.
--   **Configuration as Code**: All service configurations (Prometheus YAML, Grafana Provisioning) are version-controlled, allowing the entire stack to be recreated from scratch in minutes.
+-   **Configuration Backups**: Periodic snapshots of the reverse proxy mappings and database states are maintained off-site.
+-   **Infrastructure as Code**: All service configurations (Prometheus YAML, Grafana Provisioning) are version-controlled, allowing the entire stack to be recreated from scratch in minutes.
 
 ---
 

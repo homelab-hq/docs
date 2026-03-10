@@ -1,10 +1,10 @@
 site_name: Homelab HQ
-site_url: https://homelab-hq.github.io/homelab/
+site_url: https://homelab.debdut.in/
 site_description: Documentation for a private, zero-trust homelab infrastructure.
 site_author: Debdut Goswami
 
-repo_url: https://github.com/homelab-hq/homelab
-repo_name: homelab-hq/homelab
+repo_url: https://github.com/homelab-hq/docs
+repo_name: homelab-hq/docs
 edit_uri: edit/main/docs/
 
 theme:
@@ -33,10 +33,18 @@ theme:
     - content.code.copy
     - content.code.annotate
 
+plugins:
+  - search
+  - mermaid2
+
 markdown_extensions:
   - admonition
   - pymdownx.details
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:mermaid2.fence_mermaid
   - pymdownx.highlight:
       anchor_linenums: true
   - pymdownx.inlinehilite
