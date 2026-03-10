@@ -79,6 +79,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#infrastructure-overview" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -485,6 +490,26 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -502,6 +527,58 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-pillars" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧱 The Pillars
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#directory-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📁 Directory Structure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#management-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🛠️ Management Workflow
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -846,6 +923,49 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-pillars" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧱 The Pillars
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#directory-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📁 Directory Structure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#management-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🛠️ Management Workflow
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -865,9 +985,62 @@
   
 
 
-  <h1>Overview</h1>
-
-
+<h1 id="infrastructure-overview">Infrastructure Overview<a class="headerlink" href="#infrastructure-overview" title="Permanent link">&para;</a></h1>
+<p>Our infrastructure is designed for <strong>low-maintenance, high-reliability</strong> operations on a single node.</p>
+<h2 id="the-pillars">🧱 The Pillars<a class="headerlink" href="#the-pillars" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Pillar</th>
+<th style="text-align: left;">Technology</th>
+<th style="text-align: left;">Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Networking</strong></td>
+<td style="text-align: left;">Tailscale</td>
+<td style="text-align: left;">Encrypted mesh VPN and MagicDNS.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Orchestration</strong></td>
+<td style="text-align: left;">Docker Compose</td>
+<td style="text-align: left;">Containerized services and dependency management.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Reverse Proxy</strong></td>
+<td style="text-align: left;">Nginx Proxy Manager</td>
+<td style="text-align: left;">Internal SSL/TLS termination and hostname routing.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Monitoring</strong></td>
+<td style="text-align: left;">Prometheus/Grafana</td>
+<td style="text-align: left;">Real-time observability and alerting.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="directory-structure">📁 Directory Structure<a class="headerlink" href="#directory-structure" title="Permanent link">&para;</a></h2>
+<p>The root repository acts as a <strong>central orchestrator</strong> for all homelab submodules.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>homelab/
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├── docs/               # (Submodule) This documentation site.
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>├── monitoring/         # (Submodule) Prometheus, Grafana, Loki stack.
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>├── jellyfin/           # (Submodule) Media server stack.
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>├── servarr/            # (Submodule) Media automation stack.
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>├── tailscale/          # (Submodule) VPN and networking.
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>├── bridge/             # (Submodule) Custom alerting intermediary.
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>├── apprise/            # (Submodule) Notification server.
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>├── nginx-proxy-manager/# (Submodule) Internal reverse proxy.
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>├── Makefile            # Unified management API.
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>└── .envrc.example      # Environment variable template.
+</code></pre></div>
+<h2 id="management-workflow">🛠️ Management Workflow<a class="headerlink" href="#management-workflow" title="Permanent link">&para;</a></h2>
+<p>The <strong>Makefile</strong> provides a unified CLI for the entire infrastructure:</p>
+<ul>
+<li><code>make up</code>: Starts Tailscale first, then infrastructure, then services.</li>
+<li><code>make update</code>: Pulls latest images and restarts the entire stack.</li>
+<li><code>make status</code>: Shows a combined health status of all homelab containers.</li>
+<li><code>make logs</code>: Aggregates logs from all submodules into a single stream.</li>
+</ul>
 
 
 

@@ -79,6 +79,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#monitoring-stack" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -628,6 +633,26 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Monitoring
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -645,6 +670,58 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📊 Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🛠️ Architecture
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#alerting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚨 Alerting
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -846,6 +923,49 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📊 Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🛠️ Architecture
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#alerting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚨 Alerting
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -865,9 +985,68 @@
   
 
 
-  <h1>Monitoring</h1>
-
-
+<h1 id="monitoring-stack">Monitoring Stack<a class="headerlink" href="#monitoring-stack" title="Permanent link">&para;</a></h1>
+<p>Our monitoring stack provides deep visibility into the health and performance of all homelab services, from hardware metrics to application-level traces.</p>
+<h2 id="overview">📊 Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>The stack is built on the <strong>LGTM</strong> (Loki, Grafana, Tempo, Mimir) philosophy, optimized for a single-node homelab environment.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Component</th>
+<th style="text-align: left;">Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Prometheus</strong></td>
+<td style="text-align: left;">Metric collection and time-series database.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Grafana</strong></td>
+<td style="text-align: left;">Central visualization and alerting dashboard.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Loki</strong></td>
+<td style="text-align: left;">Log aggregation and indexing.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Promtail</strong></td>
+<td style="text-align: left;">Log shipping agent for Docker containers.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Beyla</strong></td>
+<td style="text-align: left;">eBPF-based auto-instrumentation for HTTP/gRPC services.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>JSON Exporter</strong></td>
+<td style="text-align: left;">Scrapes custom APIs (e.g., Speedtest Tracker).</td>
+</tr>
+</tbody>
+</table>
+<h2 id="architecture">🛠️ Architecture<a class="headerlink" href="#architecture" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>graph TD
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    subgraph Services
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>        S1[Bridge]
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>        S2[Glance]
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>        S3[Jellyfin]
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    end
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    S1 -- Logs --&gt; PT[Promtail]
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    S2 -- Metrics --&gt; B[Beyla]
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    S3 -- Metrics --&gt; B
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>    PT -- Push --&gt; L[Loki]
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>    B -- Pull --&gt; P[Prometheus]
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>    L -- Query --&gt; G[Grafana]
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>    P -- Query --&gt; G
+</code></pre></div>
+<h2 id="alerting">🚨 Alerting<a class="headerlink" href="#alerting" title="Permanent link">&para;</a></h2>
+<p>Alerts are defined in <code>monitoring/grafana/provisioning/alerting/alerting.yml</code> and are routed via <strong>Apprise</strong> to Telegram.</p>
+<ul>
+<li><strong>High CPU/Memory</strong>: Triggers if a container exceeds 90 0x0p+0llocation for 5 minutes.</li>
+<li><strong>Service Down</strong>: Triggers if a healthcheck fails for 2 consecutive polls.</li>
+</ul>
 
 
 

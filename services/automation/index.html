@@ -79,6 +79,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#automation-notifications" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -684,6 +689,26 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Automation
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -701,6 +726,86 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#apprise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔔 Apprise
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bridge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌉 Bridge
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workflows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🛠️ Workflows
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🛠️ Workflows">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#monitoring-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Monitoring Workflow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#media-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Media Workflow
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -846,6 +951,77 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#apprise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔔 Apprise
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bridge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌉 Bridge
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workflows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🛠️ Workflows
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🛠️ Workflows">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#monitoring-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Monitoring Workflow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#media-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Media Workflow
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -865,9 +1041,51 @@
   
 
 
-  <h1>Automation</h1>
-
-
+<h1 id="automation-notifications">Automation &amp; Notifications<a class="headerlink" href="#automation-notifications" title="Permanent link">&para;</a></h1>
+<p>Automation is the glue that connects our infrastructure, media, and monitoring stacks.</p>
+<h2 id="apprise">🔔 Apprise<a class="headerlink" href="#apprise" title="Permanent link">&para;</a></h2>
+<p><strong>Apprise</strong> is our central notification server, providing a unified API for sending alerts to over 100+ services.</p>
+<ul>
+<li><strong>Unified Format</strong>: All internal services send notifications to <code>http://apprise:8000/notify/</code>.</li>
+<li><strong>Telegram Integration</strong>: Alerts are routed to a private Telegram bot via the <code>TELEGRAM_URL</code> environment variable.</li>
+</ul>
+<h2 id="bridge">🌉 Bridge<a class="headerlink" href="#bridge" title="Permanent link">&para;</a></h2>
+<p><strong>Bridge</strong> is a custom Python service that acts as an intelligent intermediary between our stacks.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Role</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Health Proxy</strong></td>
+<td style="text-align: left;">Buffers and debounces healthcheck alerts.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Webhook Normalization</strong></td>
+<td style="text-align: left;">Converts disparate webhook formats into standard Apprise notifications.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Alert Enrichment</strong></td>
+<td style="text-align: left;">Adds context (e.g., container uptime) to monitoring alerts.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="workflows">🛠️ Workflows<a class="headerlink" href="#workflows" title="Permanent link">&para;</a></h2>
+<h3 id="monitoring-workflow"><strong>Monitoring Workflow</strong><a class="headerlink" href="#monitoring-workflow" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Grafana</strong> detects a metric anomaly.</li>
+<li>An alert is sent to <strong>Apprise</strong>.</li>
+<li><strong>Apprise</strong> delivers the alert to a private Telegram channel.</li>
+</ol>
+<h3 id="media-workflow"><strong>Media Workflow</strong><a class="headerlink" href="#media-workflow" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Sonarr</strong> completes a download.</li>
+<li>A post-import script triggers <code>mkv2mp4.py</code>.</li>
+<li><strong>Bridge</strong> sends a "Media Ready" notification to Telegram via <strong>Apprise</strong>.</li>
+</ol>
 
 
 

@@ -79,6 +79,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#media-streaming" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -656,6 +661,26 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Media & Streaming
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -673,6 +698,58 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#jellyfin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎞️ Jellyfin
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servarr-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎬 Servarr Stack
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#post-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚙️ Post-Processing
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -846,6 +923,49 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#jellyfin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎞️ Jellyfin
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servarr-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎬 Servarr Stack
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#post-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚙️ Post-Processing
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -865,9 +985,47 @@
   
 
 
-  <h1>Media & Streaming</h1>
-
-
+<h1 id="media-streaming">Media &amp; Streaming<a class="headerlink" href="#media-streaming" title="Permanent link">&para;</a></h1>
+<p>The media stack is designed for seamless, high-performance streaming across the local and Tailscale networks.</p>
+<h2 id="jellyfin">🎞️ Jellyfin<a class="headerlink" href="#jellyfin" title="Permanent link">&para;</a></h2>
+<p><strong>Jellyfin</strong> is the centerpiece of the media stack, providing an open-source, private alternative to Plex or Emby.</p>
+<ul>
+<li><strong>Storage</strong>: Media is mounted from a dedicated external volume: <code>/Volumes/homelab/streaming/media</code>.</li>
+<li><strong>Transcoding</strong>: Configured to use hardware acceleration (where available) to support multiple remote streams.</li>
+<li><strong>Client Support</strong>: Fully accessible via standard Jellyfin apps on iOS, Android, and Smart TVs over the Tailscale tunnel.</li>
+</ul>
+<h2 id="servarr-stack">🎬 Servarr Stack<a class="headerlink" href="#servarr-stack" title="Permanent link">&para;</a></h2>
+<p>The <strong>Servarr</strong> ecosystem automates the entire media lifecycle.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Service</th>
+<th style="text-align: left;">Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Sonarr</strong></td>
+<td style="text-align: left;">Automated TV show management and tracking.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Radarr</strong></td>
+<td style="text-align: left;">Automated movie management and tracking.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Prowlarr</strong></td>
+<td style="text-align: left;">Centralized indexer manager for Sonarr and Radarr.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>qBittorrent</strong></td>
+<td style="text-align: left;">High-performance BitTorrent client with WebUI.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="post-processing">⚙️ Post-Processing<a class="headerlink" href="#post-processing" title="Permanent link">&para;</a></h2>
+<p>A custom Python utility, <code>mkv2mp4.py</code>, handles remuxing of downloaded media:
+- <strong>Remuxing</strong>: Losslessly converts MKV to MP4 (copying codecs).
+- <strong>Automation</strong>: Triggered via Sonarr/Radarr post-import scripts to ensure maximum compatibility with streaming clients.</p>
 
 
 

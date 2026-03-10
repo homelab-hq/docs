@@ -79,6 +79,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#networking-vpn" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -513,6 +518,26 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Networking & VPN
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -530,6 +555,58 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tailscale" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🕸️ Tailscale
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🛠️ Docker Integration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-advantages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔒 Security Advantages
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -846,6 +923,49 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tailscale" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🕸️ Tailscale
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🛠️ Docker Integration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-advantages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔒 Security Advantages
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -865,9 +985,37 @@
   
 
 
-  <h1>Networking & VPN</h1>
-
-
+<h1 id="networking-vpn">Networking &amp; VPN<a class="headerlink" href="#networking-vpn" title="Permanent link">&para;</a></h1>
+<p>Our networking strategy is built on <strong>Zero-Trust Principles</strong>, where all inbound traffic is encrypted and authenticated through a private mesh network.</p>
+<h2 id="tailscale">🕸️ Tailscale<a class="headerlink" href="#tailscale" title="Permanent link">&para;</a></h2>
+<p><strong>Tailscale</strong> is the backbone of our secure networking. It creates an overlay network (Tailnet) that connects all devices—from cloud servers to local Docker containers—without requiring port forwarding.</p>
+<ul>
+<li><strong>WireGuard® Powered</strong>: Every connection is encrypted end-to-end.</li>
+<li><strong>Identity-based Access</strong>: Users authenticate with their OIDC/SSO provider.</li>
+<li><strong>MagicDNS</strong>: Automatically assigns human-readable hostnames to devices (e.g., <code>homelab.ts.debdut.in</code>).</li>
+</ul>
+<h2 id="docker-integration">🛠️ Docker Integration<a class="headerlink" href="#docker-integration" title="Permanent link">&para;</a></h2>
+<p>Tailscale runs as a container within the homelab stack, providing a gateway into the internal Docker network.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>graph LR
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    subgraph Public Internet
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>        U[User on Mobile/Laptop]
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    end
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    subgraph Tailnet
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>        U -- WireGuard Tunnel --&gt; T[Tailscale Container]
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    end
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    subgraph Internal Network
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>        T -- Route --&gt; NPM[Nginx Proxy Manager]
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>        NPM -- HTTP --&gt; S[Service: Grafana]
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>    end
+</code></pre></div>
+<h2 id="security-advantages">🔒 Security Advantages<a class="headerlink" href="#security-advantages" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>No Port Forwarding</strong>: The internet-facing router remains completely closed.</li>
+<li><strong>Private Hostnames</strong>: Services like <code>prometheus.ts.debdut.in</code> are only resolvable and accessible when connected to the Tailnet.</li>
+<li><strong>Encrypted Internode Traffic</strong>: Communication between the Tailscale gateway and other services is isolated within the internal Docker network (<code>homelab</code> bridge).</li>
+</ol>
 
 
 

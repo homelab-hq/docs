@@ -79,6 +79,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#infrastructure-management-makefile-api" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -771,6 +776,26 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Management
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -788,6 +813,97 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚀 Commands
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🛠️ Usage Examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🛠️ Usage Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#start-all-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Start All Services
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#restart-a-specific-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Restart a Specific Service
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#follow-logs-for-all-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Follow Logs for All Monitoring
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚙️ Advanced Features
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -846,6 +962,88 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚀 Commands
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🛠️ Usage Examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🛠️ Usage Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#start-all-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Start All Services
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#restart-a-specific-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Restart a Specific Service
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#follow-logs-for-all-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Follow Logs for All Monitoring
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚙️ Advanced Features
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -865,9 +1063,76 @@
   
 
 
-  <h1>Management</h1>
-
-
+<h1 id="infrastructure-management-makefile-api">Infrastructure Management (Makefile API)<a class="headerlink" href="#infrastructure-management-makefile-api" title="Permanent link">&para;</a></h1>
+<p>The <strong>Makefile</strong> in the root of the project provides a unified, industry-standard CLI for managing the entire homelab stack.</p>
+<h2 id="commands">🚀 Commands<a class="headerlink" href="#commands" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Command</th>
+<th style="text-align: left;">Role</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>make up</strong></td>
+<td style="text-align: left;">Start</td>
+<td style="text-align: left;">Starts Tailscale first, then infrastructure, then services.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>make down</strong></td>
+<td style="text-align: left;">Stop</td>
+<td style="text-align: left;">Gracefully stops all services and infrastructure in reverse order.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>make restart</strong></td>
+<td style="text-align: left;">Reset</td>
+<td style="text-align: left;">Performs a full <code>make down</code> followed by <code>make up</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>make status</strong></td>
+<td style="text-align: left;">Health</td>
+<td style="text-align: left;">Shows combined health status of all homelab containers.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>make pull</strong></td>
+<td style="text-align: left;">Update</td>
+<td style="text-align: left;">Pulls the latest images for all submodules.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>make update</strong></td>
+<td style="text-align: left;">Full Update</td>
+<td style="text-align: left;">Performs a <code>make pull</code> followed by <code>make restart</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>make logs</strong></td>
+<td style="text-align: left;">Observability</td>
+<td style="text-align: left;">Aggregates logs from all submodules into a single stream.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>make clean</strong></td>
+<td style="text-align: left;">Cleanup</td>
+<td style="text-align: left;">Stops all services and removes the homelab network.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="usage-examples">🛠️ Usage Examples<a class="headerlink" href="#usage-examples" title="Permanent link">&para;</a></h2>
+<h3 id="start-all-services"><strong>Start All Services</strong><a class="headerlink" href="#start-all-services" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>make<span class="w"> </span>up
+</code></pre></div>
+<h3 id="restart-a-specific-service"><strong>Restart a Specific Service</strong><a class="headerlink" href="#restart-a-specific-service" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>make<span class="w"> </span>restart<span class="w"> </span>glance
+</code></pre></div>
+<h3 id="follow-logs-for-all-monitoring"><strong>Follow Logs for All Monitoring</strong><a class="headerlink" href="#follow-logs-for-all-monitoring" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>make<span class="w"> </span>logs<span class="w"> </span>monitoring
+</code></pre></div>
+<h2 id="advanced-features">⚙️ Advanced Features<a class="headerlink" href="#advanced-features" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Dependency Order</strong>: The <code>make up</code> target is designed to start <strong>Tailscale</strong> and other critical infrastructure before application-level services.</li>
+<li><strong>Service-Specific Commands</strong>: Most commands (like <code>up</code>, <code>down</code>, <code>logs</code>) support an optional service argument for surgical operations.</li>
+<li><strong>Color-Coded Output</strong>: Provides clear, visual feedback on the success or failure of each management step.</li>
+</ul>
 
 
 
