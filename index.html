@@ -453,10 +453,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#tech-stack" class="md-nav__link">
+  <a href="#hardware-host-environment" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🛠️ Tech Stack
+        💻 Hardware &amp; Host Environment
       
     </span>
   </a>
@@ -959,10 +959,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#tech-stack" class="md-nav__link">
+  <a href="#hardware-host-environment" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🛠️ Tech Stack
+        💻 Hardware &amp; Host Environment
       
     </span>
   </a>
@@ -1017,15 +1017,46 @@
 <li><strong>Infrastructure as Code</strong>: Everything is containerized and managed via <code>docker compose</code> with a unified <code>Makefile</code> API.</li>
 <li><strong>Observability</strong>: A full Prometheus/Grafana stack for real-time monitoring and alerting.</li>
 </ol>
-<h2 id="tech-stack">🛠️ Tech Stack<a class="headerlink" href="#tech-stack" title="Permanent link">&para;</a></h2>
-<ul>
-<li><strong>Host OS</strong>: macOS / Linux (Docker Desktop / Engine)</li>
-<li><strong>Container Orchestration</strong>: Docker Compose</li>
-<li><strong>VPN / Overlay Network</strong>: Tailscale</li>
-<li><strong>Monitoring</strong>: Prometheus, Grafana, Loki, Promtail, Beyla</li>
-<li><strong>Automation</strong>: Apprise, Bridge (custom service)</li>
-<li><strong>Media</strong>: Jellyfin, Servarr Stack</li>
-</ul>
+<h2 id="hardware-host-environment">💻 Hardware &amp; Host Environment<a class="headerlink" href="#hardware-host-environment" title="Permanent link">&para;</a></h2>
+<p>The homelab runs on a high-performance, small-form-factor host designed for 24/7 reliability and silent operation.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Component</th>
+<th style="text-align: left;">Specification</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Host System</strong></td>
+<td style="text-align: left;">Mac Studio (2022)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Processor</strong></td>
+<td style="text-align: left;">Apple M1 Max (10-core CPU, 24-core GPU)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Memory</strong></td>
+<td style="text-align: left;">32 GB Unified Memory</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Primary Storage</strong></td>
+<td style="text-align: left;">512 GB NVMe SSD (System &amp; Configurations)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>External Storage</strong></td>
+<td style="text-align: left;">12 TB RAID Array (Media &amp; Long-term Backups)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Virtualization</strong></td>
+<td style="text-align: left;">Docker Desktop (VirtioFS enabled for I/O performance)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Host OS</strong></td>
+<td style="text-align: left;">macOS Sonoma 14.x</td>
+</tr>
+</tbody>
+</table>
 <hr />
 <h2 id="quick-start-for-maintainers">🚦 Quick Start for Maintainers<a class="headerlink" href="#quick-start-for-maintainers" title="Permanent link">&para;</a></h2>
 <p>If you are setting up this lab for the first time:</p>
