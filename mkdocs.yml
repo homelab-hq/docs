@@ -33,14 +33,14 @@ theme:
     - content.code.copy
     - content.code.annotate
 
-plugins:
-  - search
-  - mermaid2
-
 markdown_extensions:
   - admonition
   - pymdownx.details
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.mermaid_format
   - pymdownx.highlight:
       anchor_linenums: true
   - pymdownx.inlinehilite
