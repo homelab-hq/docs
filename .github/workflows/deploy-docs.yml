@@ -4,9 +4,9 @@ on:
     branches:
       - main
     paths:
-      - 'docs/**'
-      - 'mkdocs.yml'
-      - '.github/workflows/deploy-docs.yml'
+      - "docs/**"
+      - "mkdocs.yml"
+      - ".github/workflows/deploy-docs.yml"
 
 permissions:
   contents: write
@@ -25,7 +25,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install mkdocs-material pymdown-extensions
+          pip install mkdocs-material mkdocs-mermaid2-plugin pymdown-extensions
 
       - name: Build and Deploy
         run: |
