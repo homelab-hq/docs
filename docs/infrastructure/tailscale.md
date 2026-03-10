@@ -14,7 +14,7 @@ Our networking strategy is built on **Zero-Trust Principles**, where all inbound
 
 Tailscale runs as a container within the homelab stack, providing a gateway into the internal Docker network.
 
-``` mermaid
+```mermaid
 graph LR
     subgraph Public Internet
         U[User on Mobile/Laptop]
