@@ -28,10 +28,11 @@ The homelab runs on a high-performance, small-form-factor host designed for 24/7
 | :--- | :--- |
 | **Host System** | Mac mini (M4, 2024) |
 | **Processor** | Apple M4 (10-core CPU, 10-core GPU) |
-| **Memory** | 16 GB Unified Memory |
+| **System Memory** | 16 GB Unified Memory |
 | **Primary Storage** | 256 GB NVMe SSD (System & Configurations) |
 | **External Storage** | 1 TB Dedicated Volume (`/Volumes/homelab`) |
-| **Virtualization** | Docker Desktop (VirtioFS enabled for I/O performance) |
+| **Docker Resources** | 4 CPUs, 4 GB Memory Limit, 64 GB Virtual Disk |
+| **Virtualization** | Docker Desktop (VirtioFS enabled) |
 | **Host OS** | macOS 15.3.1 |
 
 ---
