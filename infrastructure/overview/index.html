@@ -1027,34 +1027,33 @@
 </table>
 <h2 id="conceptual-architecture">🏗️ Conceptual Architecture<a class="headerlink" href="#conceptual-architecture" title="Permanent link">&para;</a></h2>
 <p>The following diagram illustrates how the layers interact to provide a seamless and secure experience.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>graph BT
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    subgraph AppLayer [Application Layer]
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>        Media[Media Services]
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>        Utility[Internal Utilities]
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    end
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    subgraph LogicLayer [Automation &amp; Logic]
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>        Bridge[Bridge Service]
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>        Apprise[Notification Engine]
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    end
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>    subgraph DataLayer [Observability Layer]
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>        Metrics[Prometheus]
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>        Logs[Loki]
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>        Dash[Grafana]
-<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>    end
-<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>
-<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>    subgraph GateLayer [Access Layer]
-<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>        VPN[Tailscale Gateway]
-<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>        Proxy[Reverse Proxy]
-<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>    end
-<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>
-<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>    VPN --&gt; Proxy
-<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>    Proxy --&gt; AppLayer
-<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>    AppLayer --&gt; LogicLayer
-<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>    AppLayer -.-&gt; DataLayer
-<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>    LogicLayer --&gt; DataLayer
-</code></pre></div>
+<pre class="mermaid"><code>graph BT
+    subgraph AppLayer [Application Layer]
+        Media[Media Services]
+        Utility[Internal Utilities]
+    end
+
+    subgraph LogicLayer [Automation &amp; Logic]
+        Bridge[Bridge Service]
+        Apprise[Notification Engine]
+    end
+
+    subgraph DataLayer [Observability Layer]
+        Metrics[Prometheus]
+        Logs[Loki]
+        Dash[Grafana]
+    end
+
+    subgraph GateLayer [Access Layer]
+        VPN[Tailscale Gateway]
+        Proxy[Reverse Proxy]
+    end
+
+    VPN --&gt; Proxy
+    Proxy --&gt; AppLayer
+    AppLayer --&gt; LogicLayer
+    AppLayer -.-&gt; DataLayer
+    LogicLayer --&gt; DataLayer</code></pre>
 <h2 id="unified-management">🛠️ Unified Management<a class="headerlink" href="#unified-management" title="Permanent link">&para;</a></h2>
 <p>Management of the entire stack is handled through a centralized Command Line Interface (CLI). This interface abstracts the complexity of individual container operations into high-level lifecycle commands:</p>
 <ul>
@@ -1121,6 +1120,8 @@
     
     
       <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
       
     
   </body>
