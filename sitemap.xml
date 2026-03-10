@@ -1,43 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://homelab-hq.github.io/homelab/</loc>
+         <loc>https://homelab.debdut.in/</loc>
          <lastmod>2026-03-10</lastmod>
     </url>
     <url>
-         <loc>https://homelab-hq.github.io/homelab/security/</loc>
+         <loc>https://homelab.debdut.in/security/</loc>
          <lastmod>2026-03-10</lastmod>
     </url>
     <url>
-         <loc>https://homelab-hq.github.io/homelab/infrastructure/nginx/</loc>
+         <loc>https://homelab.debdut.in/infrastructure/nginx/</loc>
          <lastmod>2026-03-10</lastmod>
     </url>
     <url>
-         <loc>https://homelab-hq.github.io/homelab/infrastructure/overview/</loc>
+         <loc>https://homelab.debdut.in/infrastructure/overview/</loc>
          <lastmod>2026-03-10</lastmod>
     </url>
     <url>
-         <loc>https://homelab-hq.github.io/homelab/infrastructure/tailscale/</loc>
+         <loc>https://homelab.debdut.in/infrastructure/tailscale/</loc>
          <lastmod>2026-03-10</lastmod>
     </url>
     <url>
-         <loc>https://homelab-hq.github.io/homelab/operations/makefile/</loc>
+         <loc>https://homelab.debdut.in/operations/makefile/</loc>
          <lastmod>2026-03-10</lastmod>
     </url>
     <url>
-         <loc>https://homelab-hq.github.io/homelab/operations/troubleshooting/</loc>
+         <loc>https://homelab.debdut.in/operations/troubleshooting/</loc>
          <lastmod>2026-03-10</lastmod>
     </url>
     <url>
-         <loc>https://homelab-hq.github.io/homelab/services/automation/</loc>
+         <loc>https://homelab.debdut.in/services/automation/</loc>
          <lastmod>2026-03-10</lastmod>
     </url>
     <url>
-         <loc>https://homelab-hq.github.io/homelab/services/media/</loc>
+         <loc>https://homelab.debdut.in/services/media/</loc>
          <lastmod>2026-03-10</lastmod>
     </url>
     <url>
-         <loc>https://homelab-hq.github.io/homelab/services/monitoring/</loc>
+         <loc>https://homelab.debdut.in/services/monitoring/</loc>
          <lastmod>2026-03-10</lastmod>
     </url>
 </urlset>
