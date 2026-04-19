@@ -10,9 +10,10 @@ The infrastructure is organized into distinct logical layers to ensure separatio
 | :--- | :--- | :--- |
 | **Connectivity** | Secure ingress and mesh networking | Tailscale, WireGuard |
 | **Routing** | Service discovery and SSL termination | Nginx Proxy Manager |
+| **DNS** | Network-wide ad blocking and filtering | AdGuard Home |
 | **Observability** | Metrics, logs, and alerting | Prometheus, Grafana, Loki |
 | **Automation** | Intelligent event handling | Bridge, Apprise |
-| **Application** | User-facing services | Jellyfin, Servarr Stack |
+| **Application** | User-facing services | Jellyfin, Servarr Stack, Home Assistant |
 
 ## 🏗️ Conceptual Architecture
 
@@ -39,9 +40,11 @@ graph BT
     subgraph GateLayer [Access Layer]
         VPN[Tailscale Gateway]
         Proxy[Reverse Proxy]
+        DNS[AdGuard Home]
     end
 
     VPN --> Proxy
+    VPN --> DNS
     Proxy --> AppLayer
     AppLayer --> LogicLayer
     AppLayer -.-> DataLayer
