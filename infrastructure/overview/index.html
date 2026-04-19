@@ -672,6 +672,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../adguard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DNS & Ad Blocking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1166,6 +1194,11 @@
 <td style="text-align: left;">Nginx Proxy Manager</td>
 </tr>
 <tr>
+<td style="text-align: left;"><strong>DNS</strong></td>
+<td style="text-align: left;">Network-wide ad blocking and filtering</td>
+<td style="text-align: left;">AdGuard Home</td>
+</tr>
+<tr>
 <td style="text-align: left;"><strong>Observability</strong></td>
 <td style="text-align: left;">Metrics, logs, and alerting</td>
 <td style="text-align: left;">Prometheus, Grafana, Loki</td>
@@ -1178,7 +1211,7 @@
 <tr>
 <td style="text-align: left;"><strong>Application</strong></td>
 <td style="text-align: left;">User-facing services</td>
-<td style="text-align: left;">Jellyfin, Servarr Stack</td>
+<td style="text-align: left;">Jellyfin, Servarr Stack, Home Assistant</td>
 </tr>
 </tbody>
 </table>
@@ -1204,9 +1237,11 @@
     subgraph GateLayer [Access Layer]
         VPN[Tailscale Gateway]
         Proxy[Reverse Proxy]
+        DNS[AdGuard Home]
     end
 
     VPN --&gt; Proxy
+    VPN --&gt; DNS
     Proxy --&gt; AppLayer
     AppLayer --&gt; LogicLayer
     AppLayer -.-&gt; DataLayer

@@ -2,50 +2,54 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://homelab.debdut.in/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://homelab.debdut.in/privacy/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://homelab.debdut.in/security/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://homelab.debdut.in/terms/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-19</lastmod>
+    </url>
+    <url>
+         <loc>https://homelab.debdut.in/infrastructure/adguard/</loc>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://homelab.debdut.in/infrastructure/nginx/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://homelab.debdut.in/infrastructure/overview/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://homelab.debdut.in/infrastructure/tailscale/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://homelab.debdut.in/operations/makefile/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://homelab.debdut.in/operations/troubleshooting/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://homelab.debdut.in/services/automation/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://homelab.debdut.in/services/media/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
     <url>
          <loc>https://homelab.debdut.in/services/monitoring/</loc>
-         <lastmod>2026-04-18</lastmod>
+         <lastmod>2026-04-19</lastmod>
     </url>
 </urlset>

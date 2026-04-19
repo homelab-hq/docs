@@ -576,6 +576,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../infrastructure/adguard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DNS & Ad Blocking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -757,10 +785,38 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#post-processing" class="md-nav__link">
+  <a href="#post-import-pipeline" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ⚙️ Post-Processing
+        ⚙️ Post-Import Pipeline
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⚙️ Post-Import Pipeline">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#manual-cleanup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Manual Cleanup
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#network-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔒 Network Security
       
     </span>
   </a>
@@ -1090,10 +1146,38 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#post-processing" class="md-nav__link">
+  <a href="#post-import-pipeline" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ⚙️ Post-Processing
+        ⚙️ Post-Import Pipeline
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⚙️ Post-Import Pipeline">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#manual-cleanup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Manual Cleanup
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#network-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔒 Network Security
       
     </span>
   </a>
@@ -1121,13 +1205,14 @@
 
 
 <h1 id="media-streaming">Media &amp; Streaming<a class="headerlink" href="#media-streaming" title="Permanent link">&para;</a></h1>
-<p>The media stack is designed for seamless, high-performance streaming across the local and Tailscale networks.</p>
+<p>The media stack is designed for seamless, high-performance streaming across the Tailscale network.</p>
 <h2 id="jellyfin">🎞️ Jellyfin<a class="headerlink" href="#jellyfin" title="Permanent link">&para;</a></h2>
 <p><strong>Jellyfin</strong> is the centerpiece of the media stack, providing an open-source, private alternative to Plex or Emby.</p>
 <ul>
-<li><strong>Storage</strong>: Media is mounted from a dedicated, secure storage volume.</li>
+<li><strong>Storage</strong>: Media is mounted from a dedicated storage volume (<code>/Volumes/homelab/streaming/media</code>).</li>
 <li><strong>Transcoding</strong>: Configured to use hardware acceleration (where available) to support multiple remote streams.</li>
-<li><strong>Client Support</strong>: Fully accessible via standard Jellyfin apps on iOS, Android, and Smart TVs over the Tailscale tunnel.</li>
+<li><strong>Client Support</strong>: Fully accessible via Jellyfin apps on iOS, Android, and Smart TVs over the Tailscale tunnel.</li>
+<li><strong>Access</strong>: <a href="http://jellyfin.ts.debdut.in">jellyfin.ts.debdut.in</a></li>
 </ul>
 <h2 id="servarr-stack">🎬 Servarr Stack<a class="headerlink" href="#servarr-stack" title="Permanent link">&para;</a></h2>
 <p>The <strong>Servarr</strong> ecosystem automates the entire media lifecycle.</p>
@@ -1155,15 +1240,34 @@
 <td style="text-align: left;"><strong>qBittorrent</strong></td>
 <td style="text-align: left;">High-performance BitTorrent client with WebUI.</td>
 </tr>
+<tr>
+<td style="text-align: left;"><strong>Recyclarr</strong></td>
+<td style="text-align: left;">Syncs quality profiles from TRaSH Guides.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>FlareSolverr</strong></td>
+<td style="text-align: left;">Cloudflare bypass proxy for Prowlarr indexers.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Autoheal</strong></td>
+<td style="text-align: left;">Automatically restarts unhealthy containers.</td>
+</tr>
 </tbody>
 </table>
-<h2 id="post-processing">⚙️ Post-Processing<a class="headerlink" href="#post-processing" title="Permanent link">&para;</a></h2>
-<p>A custom utility handles the remuxing of downloaded media:</p>
-<ul>
-<li><strong>Remuxing</strong>: Losslessly converts MKV to MP4 (copying codecs).</li>
-<li><strong>Automation</strong>: Triggered via post-import scripts to ensure maximum compatibility with streaming clients.</li>
-<li><strong>Notification</strong>: Alerts the user when new media is ready for playback.</li>
-</ul>
+<h2 id="post-import-pipeline">⚙️ Post-Import Pipeline<a class="headerlink" href="#post-import-pipeline" title="Permanent link">&para;</a></h2>
+<p>A custom <code>post_import.py</code> script runs automatically after Sonarr/Radarr imports media:</p>
+<ol>
+<li><strong>Conversion</strong>: Remuxes MKV to MP4. Incompatible audio codecs (DTS, Opus) are transcoded to AAC stereo for universal device support.</li>
+<li><strong>🍎 iPad Validation</strong>: Verifies the converted file has compatible codecs (H.264/H.265 video, AAC audio) and passes an integrity check.</li>
+<li><strong>🧹 Torrent Cleanup</strong>: On successful validation, removes the torrent and download files from qBittorrent via API.</li>
+<li><strong>📲 Telegram Notification</strong>: Sends a success or failure notification via Bridge → Apprise → Telegram.</li>
+</ol>
+<h3 id="manual-cleanup">Manual Cleanup<a class="headerlink" href="#manual-cleanup" title="Permanent link">&para;</a></h3>
+<p>To validate all imported media and clean up completed torrents in bulk:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>sonarr<span class="w"> </span>python3<span class="w"> </span>/app/post_import.py<span class="w"> </span>--cleanup
+</code></pre></div>
+<h2 id="network-security">🔒 Network Security<a class="headerlink" href="#network-security" title="Permanent link">&para;</a></h2>
+<p>No ports are exposed on the host for Sonarr, Radarr, Prowlarr, FlareSolverr, or the qBittorrent WebUI. All access is through Nginx Proxy Manager. Only qBittorrent's torrent port (6882) is exposed for peer connections.</p>
 
 
 
