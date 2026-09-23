@@ -14,10 +14,13 @@ Where third-party integrations are used (such as Google Calendar via OAuth), dat
 
 This homelab integrates with the following external services:
 
-- **Google APIs** (Calendar) — accessed via OAuth 2.0 for personal calendar data only
-- **Tailscale** — used for secure, private networking
+- **Google APIs** — OAuth 2.0 for personal calendar data and for Cloudflare Access / Home Assistant sign-in
+- **Tailscale** — secure, private mesh networking
+- **Cloudflare** — Tunnel and Access for public ingress, WARP for egress, and R2 for encrypted off-site backups
+- **TMDB** — public movie/TV metadata for media discovery
+- **Telegram** — delivery channel for personal notifications and the homelab assistant bot
 
-All data retrieved from third-party services is stored locally on private infrastructure and is never transmitted to any other party.
+Backups stored in Cloudflare R2 are encrypted client-side (Restic) before upload. All other data retrieved from third-party services is stored locally on private infrastructure and is never sold or disclosed to any other party.
 
 ## Cookies and Tracking
 

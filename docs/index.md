@@ -1,7 +1,7 @@
 # Homelab Infrastructure
 
 !!! warning "Public Disclaimer"
-    This repository and documentation site represent a **private, non-public-facing homelab infrastructure**. None of the services described here are accessible via the public internet. All connectivity is managed through encrypted, zero-trust mesh networking.
+    This repository and documentation site describe a **private homelab infrastructure**. Most services are reachable only over an encrypted, zero-trust mesh network (Tailscale) and are **not** exposed to the public internet. A small number of services are published to the internet through a **Cloudflare Tunnel**, gated by **Cloudflare Access (Google OAuth SSO)** — even then, no inbound ports are opened on the home router.
 
     This documentation is provided as a "Build in Public" initiative for educational purposes, sharing architectural patterns and operational insights.
 
@@ -9,7 +9,7 @@ Welcome to the **Homelab HQ** technical wiki. This project serves as the central
 
 ## 🚀 Vision
 
-The goal of this homelab is to provide a robust, enterprise-grade environment for personal services, media, and monitoring, while maintaining a **zero-attack surface** on the public internet.
+The goal of this homelab is to provide a robust, enterprise-grade environment for personal services, media, and monitoring, while keeping the home network free of inbound port forwarding — public access, where it exists, is brokered exclusively through an identity-aware **Cloudflare Tunnel**.
 
 ## 🏗️ Architecture at a Glance
 
@@ -32,7 +32,7 @@ The homelab runs on a high-performance, small-form-factor host designed for 24/7
 | **Primary Storage** | 256 GB NVMe SSD (System & Configurations) |
 | **External Storage** | 1 TB Dedicated Volume (`/Volumes/homelab`) |
 | **Docker Resources** | 4 CPUs, 4 GB Memory Limit, 64 GB Virtual Disk |
-| **Virtualization** | Docker Desktop (VirtioFS enabled) |
+| **Virtualization** | OrbStack (VirtioFS enabled) |
 | **Host OS** | macOS 15.3.1 |
 
 ---

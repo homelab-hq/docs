@@ -12,7 +12,7 @@ The infrastructure is organized into distinct logical layers to ensure separatio
 | **Routing** | Service discovery and SSL termination | Nginx Proxy Manager |
 | **DNS** | Network-wide ad blocking and filtering | AdGuard Home |
 | **Observability** | Metrics, logs, and alerting | Prometheus, Grafana, Loki |
-| **Automation** | Intelligent event handling | Bridge, Apprise |
+| **Automation** | Intelligent event handling | Apprise |
 | **Application** | User-facing services | Jellyfin, Servarr Stack, Home Assistant |
 
 ## 🏗️ Conceptual Architecture
@@ -27,7 +27,6 @@ graph BT
     end
 
     subgraph LogicLayer [Automation & Logic]
-        Bridge[Bridge Service]
         Apprise[Notification Engine]
     end
 

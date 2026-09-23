@@ -63,14 +63,26 @@ nav:
   - Infrastructure:
       - Overview: infrastructure/overview.md
       - Networking & VPN: infrastructure/tailscale.md
+      - Public Ingress: infrastructure/cloudflared.md
+      - Egress VPN: infrastructure/warp.md
       - Reverse Proxy: infrastructure/nginx.md
       - DNS & Ad Blocking: infrastructure/adguard.md
+      - Docker Socket Proxy: infrastructure/socket-proxy.md
   - Services:
       - Monitoring: services/monitoring.md
       - Media & Streaming: services/media.md
+      - Photo Library: services/immich.md
+      - Media Requests: services/seerr.md
+      - Media Invitations: services/wizarr.md
+      - Audiobooks & Podcasts: services/audiobookshelf.md
+      - Location Timeline: services/dawarich.md
+      - Home Automation: services/home-assistant.md
+      - Homelab Assistant: services/sage.md
       - Automation: services/automation.md
   - Operations:
       - Management: operations/makefile.md
+      - Updates & Scheduling: operations/updates.md
+      - Backups: operations/backrest.md
       - Troubleshooting: operations/troubleshooting.md
   - Legal:
       - Privacy Policy: privacy.md
