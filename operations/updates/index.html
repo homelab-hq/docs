@@ -12,31 +12,31 @@
         <meta name="author" content="Debdut Goswami">
       
       
-        <link rel="canonical" href="https://homelab.debdut.in/security/">
+        <link rel="canonical" href="https://homelab.debdut.in/operations/updates/">
       
       
-        <link rel="prev" href="..">
+        <link rel="prev" href="../makefile/">
       
       
-        <link rel="next" href="../infrastructure/overview/">
+        <link rel="next" href="../backrest/">
       
       
         
       
       
-      <link rel="icon" href="../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
-        <title>Security Model - Homelab HQ</title>
+        <title>Updates & Scheduling - Homelab HQ</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -55,7 +55,7 @@
       
     
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#security-model" class="md-skip">
+        <a href="#updates-scheduling" class="md-skip">
           Skip to content
         </a>
       
@@ -94,7 +94,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="Homelab HQ" class="md-header__button md-logo" aria-label="Homelab HQ" data-md-component="logo">
+    <a href="../.." title="Homelab HQ" class="md-header__button md-logo" aria-label="Homelab HQ" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Security Model
+              Updates & Scheduling
             
           </span>
         </div>
@@ -227,7 +227,7 @@
   
   
     <li class="md-tabs__item">
-      <a href=".." class="md-tabs__link">
+      <a href="../.." class="md-tabs__link">
         
   
   
@@ -244,11 +244,9 @@
   
   
   
-    
   
-  
-    <li class="md-tabs__item md-tabs__item--active">
-      <a href="./" class="md-tabs__link">
+    <li class="md-tabs__item">
+      <a href="../../security/" class="md-tabs__link">
         
   
   
@@ -269,7 +267,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../infrastructure/overview/" class="md-tabs__link">
+        <a href="../../infrastructure/overview/" class="md-tabs__link">
           
   
   
@@ -289,7 +287,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../services/monitoring/" class="md-tabs__link">
+        <a href="../../services/monitoring/" class="md-tabs__link">
           
   
   
@@ -305,11 +303,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../operations/makefile/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../makefile/" class="md-tabs__link">
           
   
   
@@ -329,7 +329,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../privacy/" class="md-tabs__link">
+        <a href="../../privacy/" class="md-tabs__link">
           
   
   
@@ -363,7 +363,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Homelab HQ" class="md-nav__button md-logo" aria-label="Homelab HQ" data-md-component="logo">
+    <a href="../.." title="Homelab HQ" class="md-nav__button md-logo" aria-label="Homelab HQ" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -393,7 +393,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -417,37 +417,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Security Model
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../security/" class="md-nav__link">
         
   
   
@@ -463,81 +436,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#core-security-principles" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        🛡️ Core Security Principles
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#network-layer-security-tailscale" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        🔒 Network Layer Security (Tailscale)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#public-ingress-cloudflare-tunnel" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        🌐 Public Ingress (Cloudflare Tunnel)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#secrets-management" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        🔑 Secrets Management
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#disaster-recovery-backups" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        🛡️ Disaster Recovery &amp; Backups
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -601,7 +499,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../infrastructure/overview/" class="md-nav__link">
+      <a href="../../infrastructure/overview/" class="md-nav__link">
         
   
   
@@ -629,7 +527,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../infrastructure/tailscale/" class="md-nav__link">
+      <a href="../../infrastructure/tailscale/" class="md-nav__link">
         
   
   
@@ -657,7 +555,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../infrastructure/cloudflared/" class="md-nav__link">
+      <a href="../../infrastructure/cloudflared/" class="md-nav__link">
         
   
   
@@ -685,7 +583,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../infrastructure/warp/" class="md-nav__link">
+      <a href="../../infrastructure/warp/" class="md-nav__link">
         
   
   
@@ -713,7 +611,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../infrastructure/nginx/" class="md-nav__link">
+      <a href="../../infrastructure/nginx/" class="md-nav__link">
         
   
   
@@ -741,7 +639,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../infrastructure/adguard/" class="md-nav__link">
+      <a href="../../infrastructure/adguard/" class="md-nav__link">
         
   
   
@@ -769,7 +667,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../infrastructure/socket-proxy/" class="md-nav__link">
+      <a href="../../infrastructure/socket-proxy/" class="md-nav__link">
         
   
   
@@ -856,7 +754,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../services/monitoring/" class="md-nav__link">
+      <a href="../../services/monitoring/" class="md-nav__link">
         
   
   
@@ -884,7 +782,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../services/media/" class="md-nav__link">
+      <a href="../../services/media/" class="md-nav__link">
         
   
   
@@ -912,7 +810,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../services/immich/" class="md-nav__link">
+      <a href="../../services/immich/" class="md-nav__link">
         
   
   
@@ -940,7 +838,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../services/seerr/" class="md-nav__link">
+      <a href="../../services/seerr/" class="md-nav__link">
         
   
   
@@ -968,7 +866,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../services/wizarr/" class="md-nav__link">
+      <a href="../../services/wizarr/" class="md-nav__link">
         
   
   
@@ -996,7 +894,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../services/audiobookshelf/" class="md-nav__link">
+      <a href="../../services/audiobookshelf/" class="md-nav__link">
         
   
   
@@ -1024,7 +922,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../services/dawarich/" class="md-nav__link">
+      <a href="../../services/dawarich/" class="md-nav__link">
         
   
   
@@ -1052,7 +950,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../services/home-assistant/" class="md-nav__link">
+      <a href="../../services/home-assistant/" class="md-nav__link">
         
   
   
@@ -1080,7 +978,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../services/sage/" class="md-nav__link">
+      <a href="../../services/sage/" class="md-nav__link">
         
   
   
@@ -1108,7 +1006,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../services/automation/" class="md-nav__link">
+      <a href="../../services/automation/" class="md-nav__link">
         
   
   
@@ -1140,26 +1038,31 @@
       
   
   
+    
   
   
+  
     
     
     
     
+      
+        
+        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
             
   
   
@@ -1177,7 +1080,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1195,7 +1098,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/makefile/" class="md-nav__link">
+      <a href="../makefile/" class="md-nav__link">
         
   
   
@@ -1220,10 +1123,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../operations/updates/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Updates & Scheduling
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1239,6 +1169,59 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#diun-image-update-notifier" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔔 Diun — Image Update Notifier
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xyops-job-scheduler" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⏰ xyOps — Job Scheduler
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#autoheal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🩹 Autoheal
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1251,7 +1234,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/backrest/" class="md-nav__link">
+      <a href="../backrest/" class="md-nav__link">
         
   
   
@@ -1279,7 +1262,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/troubleshooting/" class="md-nav__link">
+      <a href="../troubleshooting/" class="md-nav__link">
         
   
   
@@ -1366,7 +1349,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../privacy/" class="md-nav__link">
+      <a href="../../privacy/" class="md-nav__link">
         
   
   
@@ -1394,7 +1377,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../terms/" class="md-nav__link">
+      <a href="../../terms/" class="md-nav__link">
         
   
   
@@ -1449,10 +1432,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#core-security-principles" class="md-nav__link">
+  <a href="#diun-image-update-notifier" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🛡️ Core Security Principles
+        🔔 Diun — Image Update Notifier
       
     </span>
   </a>
@@ -1460,10 +1443,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#network-layer-security-tailscale" class="md-nav__link">
+  <a href="#xyops-job-scheduler" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🔒 Network Layer Security (Tailscale)
+        ⏰ xyOps — Job Scheduler
       
     </span>
   </a>
@@ -1471,32 +1454,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#public-ingress-cloudflare-tunnel" class="md-nav__link">
+  <a href="#autoheal" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🌐 Public Ingress (Cloudflare Tunnel)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#secrets-management" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        🔑 Secrets Management
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#disaster-recovery-backups" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        🛡️ Disaster Recovery &amp; Backups
+        🩹 Autoheal
       
     </span>
   </a>
@@ -1523,48 +1484,45 @@
   
 
 
-<h1 id="security-model">Security Model<a class="headerlink" href="#security-model" title="Permanent link">&para;</a></h1>
-<p>The security of this homelab is built on a <strong>Zero-Trust Networking Architecture</strong>. This ensures that we do not trust any network by default—even our local home network—and we rely on verified identity and encryption for all communications.</p>
-<h2 id="core-security-principles">🛡️ Core Security Principles<a class="headerlink" href="#core-security-principles" title="Permanent link">&para;</a></h2>
-<ol>
-<li><strong>No Open Inbound Ports</strong>: No ports are forwarded on the internet-facing router. Inbound access arrives only through outbound-initiated tunnels — the Tailscale mesh for private services, and a Cloudflare Tunnel for the few publicly-published services.</li>
-<li><strong>Encrypted Mesh Networking</strong>: Every node is part of a <a href="https://tailscale.com">Tailscale</a> mesh network, providing end-to-end WireGuard® encryption.</li>
-<li><strong>Authenticated Access</strong>: All access is identity-gated — private services via Tailscale's OIDC/SSO, and publicly-published services via <a href="https://www.cloudflare.com/zero-trust/products/access/">Cloudflare Access</a> (Google OAuth SSO).</li>
-<li><strong>Least Privilege</strong>: Each Docker container runs with limited CPU/Memory resources and restricted network access where possible. Containers that need Docker visibility reach it through a read-only <strong>socket proxy</strong> rather than the raw Docker socket.</li>
-</ol>
-<hr />
-<h2 id="network-layer-security-tailscale">🔒 Network Layer Security (Tailscale)<a class="headerlink" href="#network-layer-security-tailscale" title="Permanent link">&para;</a></h2>
-<p>By using Tailscale, we eliminate the need for traditional VPN servers (like OpenVPN or IPsec) and their associated vulnerabilities.</p>
+<h1 id="updates-scheduling">Updates &amp; Scheduling<a class="headerlink" href="#updates-scheduling" title="Permanent link">&para;</a></h1>
+<p>Two services keep the stack current and automate recurring maintenance: <strong>Diun</strong> watches for new container images, and <strong>xyOps</strong> runs scheduled jobs against the homelab.</p>
+<h2 id="diun-image-update-notifier">🔔 Diun — Image Update Notifier<a class="headerlink" href="#diun-image-update-notifier" title="Permanent link">&para;</a></h2>
+<p><a href="https://crazymax.dev/diun/">Diun</a> polls container registries and notifies when a newer image is available for any running container.</p>
 <ul>
-<li><strong>MagicDNS</strong>: Internal services are accessed via human-readable hostnames that only resolve within the private mesh.</li>
-<li><strong>ACL Policies</strong>: Tailscale Access Control Lists (ACLs) can restrict which devices can talk to each other, even within the mesh.</li>
-<li><strong>HTTPS inside the Tunnel</strong>: We use a Reverse Proxy to provide valid SSL/TLS certificates for internal hostnames, ensuring traffic is encrypted even <em>after</em> it leaves the WireGuard tunnel.</li>
+<li><strong>Discovery</strong>: Reads running containers via a read-only <a href="../../infrastructure/socket-proxy/"><code>socket-proxy-diun</code></a> — no raw Docker socket access.</li>
+<li><strong>Notifications</strong>: New-image alerts are delivered through the notification pipeline to Telegram.</li>
+<li><strong>Config</strong>: Watch rules live in <code>diun.yml</code> (mounted read-only).</li>
 </ul>
-<h2 id="public-ingress-cloudflare-tunnel">🌐 Public Ingress (Cloudflare Tunnel)<a class="headerlink" href="#public-ingress-cloudflare-tunnel" title="Permanent link">&para;</a></h2>
-<p>A small, deliberately-chosen subset of services is published to the public internet through a <a href="https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/">Cloudflare Tunnel</a> rather than the Tailscale mesh.</p>
-<ul>
-<li><strong>Outbound-Initiated</strong>: The <code>cloudflared</code> connector dials <em>out</em> to Cloudflare, so no inbound ports are opened on the home router — the "no open ports" guarantee still holds.</li>
-<li><strong>Identity-Gated</strong>: Every public hostname sits behind a <strong>Cloudflare Access</strong> application requiring <strong>Google OAuth SSO</strong>; unauthenticated requests never reach the origin service.</li>
-<li><strong>Hardened Connector</strong>: The container drops all Linux capabilities (<code>cap_drop: ALL</code>) and runs with <code>no-new-privileges</code>.</li>
-</ul>
-<h2 id="secrets-management">🔑 Secrets Management<a class="headerlink" href="#secrets-management" title="Permanent link">&para;</a></h2>
-<p>We use a "Clean Repository" strategy to ensure that no sensitive data (API keys, passwords, tokens) is ever committed to version control.</p>
-<ul>
-<li><strong>Dynamic Environment Loading</strong>: All sensitive environment variables are loaded dynamically into the shell and injected into the container at runtime.</li>
-<li><strong>Consolidated Templates</strong>: Publicly available templates provide the structure of required variables without exposing actual values.</li>
-<li><strong>Container Isolation</strong>: Docker Compose files use variable interpolation, ensuring that secrets are only loaded from the host's protected environment.</li>
-</ul>
-<h2 id="disaster-recovery-backups">🛡️ Disaster Recovery &amp; Backups<a class="headerlink" href="#disaster-recovery-backups" title="Permanent link">&para;</a></h2>
-<p>Security isn't just about preventing access—it's also about ensuring data integrity.</p>
-<ul>
-<li><strong>Configuration Backups</strong>: Application state and service configurations are backed up with <strong>Restic</strong> (managed via <strong>Backrest</strong>) to <strong>Cloudflare R2</strong> object storage off-site.</li>
-<li><strong>Infrastructure as Code</strong>: All service configurations (Prometheus YAML, Grafana Provisioning) are version-controlled, allowing the entire stack to be recreated from scratch in minutes.</li>
-</ul>
-<hr />
-<div class="admonition success">
-<p class="admonition-title">Security Audit Status</p>
-<p>This infrastructure is under continuous personal review. All dependencies are monitored for vulnerabilities using GitHub's automated security alerts.</p>
+<div class="admonition note">
+<p class="admonition-title">Notify, Don't Auto-Update</p>
+<p>Diun only <em>reports</em> available updates. Applying them is a deliberate step via <code>make update</code>, keeping upgrades under manual control.</p>
 </div>
+<h2 id="xyops-job-scheduler">⏰ xyOps — Job Scheduler<a class="headerlink" href="#xyops-job-scheduler" title="Permanent link">&para;</a></h2>
+<p><a href="https://github.com/pixlcore">xyOps</a> (with its <code>xysat</code> satellite agent) provides scheduled task orchestration for the homelab.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Container</th>
+<th style="text-align: left;">Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>xyops</code></td>
+<td style="text-align: left;">Scheduler UI and job engine</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>xysat</code></td>
+<td style="text-align: left;">Satellite agent that executes jobs</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Docker Exec</strong>: Jobs that operate on containers reach Docker through <a href="../../infrastructure/socket-proxy/"><code>socket-proxy-xyops</code></a>, which permits <code>exec</code> (see the write-access trade-off on that page).</li>
+<li><strong>Access</strong>: <a href="http://xyops.ts.debdut.in">xyops.ts.debdut.in</a></li>
+</ul>
+<h2 id="autoheal">🩹 Autoheal<a class="headerlink" href="#autoheal" title="Permanent link">&para;</a></h2>
+<p>Complementing scheduled maintenance, <strong>Autoheal</strong> watches container healthchecks and restarts any container that reports unhealthy — via a dedicated <code>socket-proxy-autoheal</code> limited to the restart endpoint. Containers opt in with the <code>autoheal=true</code> label.</p>
 
 
 
@@ -1620,10 +1578,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
       

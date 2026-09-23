@@ -12,31 +12,31 @@
         <meta name="author" content="Debdut Goswami">
       
       
-        <link rel="canonical" href="https://homelab.debdut.in/security/">
+        <link rel="canonical" href="https://homelab.debdut.in/operations/backrest/">
       
       
-        <link rel="prev" href="..">
+        <link rel="prev" href="../updates/">
       
       
-        <link rel="next" href="../infrastructure/overview/">
+        <link rel="next" href="../troubleshooting/">
       
       
         
       
       
-      <link rel="icon" href="../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
-        <title>Security Model - Homelab HQ</title>
+        <title>Backups - Homelab HQ</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -55,7 +55,7 @@
       
     
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#security-model" class="md-skip">
+        <a href="#backups-backrest" class="md-skip">
           Skip to content
         </a>
       
@@ -94,7 +94,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="Homelab HQ" class="md-header__button md-logo" aria-label="Homelab HQ" data-md-component="logo">
+    <a href="../.." title="Homelab HQ" class="md-header__button md-logo" aria-label="Homelab HQ" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Security Model
+              Backups
             
           </span>
         </div>
@@ -227,7 +227,7 @@
   
   
     <li class="md-tabs__item">
-      <a href=".." class="md-tabs__link">
+      <a href="../.." class="md-tabs__link">
         
   
   
@@ -244,11 +244,9 @@
   
   
   
-    
   
-  
-    <li class="md-tabs__item md-tabs__item--active">
-      <a href="./" class="md-tabs__link">
+    <li class="md-tabs__item">
+      <a href="../../security/" class="md-tabs__link">
         
   
   
@@ -269,7 +267,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../infrastructure/overview/" class="md-tabs__link">
+        <a href="../../infrastructure/overview/" class="md-tabs__link">
           
   
   
@@ -289,7 +287,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../services/monitoring/" class="md-tabs__link">
+        <a href="../../services/monitoring/" class="md-tabs__link">
           
   
   
@@ -305,11 +303,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../operations/makefile/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../makefile/" class="md-tabs__link">
           
   
   
@@ -329,7 +329,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../privacy/" class="md-tabs__link">
+        <a href="../../privacy/" class="md-tabs__link">
           
   
   
@@ -363,7 +363,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Homelab HQ" class="md-nav__button md-logo" aria-label="Homelab HQ" data-md-component="logo">
+    <a href="../.." title="Homelab HQ" class="md-nav__button md-logo" aria-label="Homelab HQ" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -393,7 +393,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -417,37 +417,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Security Model
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../security/" class="md-nav__link">
         
   
   
@@ -463,81 +436,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#core-security-principles" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        🛡️ Core Security Principles
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#network-layer-security-tailscale" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        🔒 Network Layer Security (Tailscale)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#public-ingress-cloudflare-tunnel" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        🌐 Public Ingress (Cloudflare Tunnel)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#secrets-management" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        🔑 Secrets Management
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#disaster-recovery-backups" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        🛡️ Disaster Recovery &amp; Backups
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -601,7 +499,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../infrastructure/overview/" class="md-nav__link">
+      <a href="../../infrastructure/overview/" class="md-nav__link">
         
   
   
@@ -629,7 +527,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../infrastructure/tailscale/" class="md-nav__link">
+      <a href="../../infrastructure/tailscale/" class="md-nav__link">
         
   
   
@@ -657,7 +555,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../infrastructure/cloudflared/" class="md-nav__link">
+      <a href="../../infrastructure/cloudflared/" class="md-nav__link">
         
   
   
@@ -685,7 +583,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../infrastructure/warp/" class="md-nav__link">
+      <a href="../../infrastructure/warp/" class="md-nav__link">
         
   
   
@@ -713,7 +611,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../infrastructure/nginx/" class="md-nav__link">
+      <a href="../../infrastructure/nginx/" class="md-nav__link">
         
   
   
@@ -741,7 +639,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../infrastructure/adguard/" class="md-nav__link">
+      <a href="../../infrastructure/adguard/" class="md-nav__link">
         
   
   
@@ -769,7 +667,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../infrastructure/socket-proxy/" class="md-nav__link">
+      <a href="../../infrastructure/socket-proxy/" class="md-nav__link">
         
   
   
@@ -856,7 +754,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../services/monitoring/" class="md-nav__link">
+      <a href="../../services/monitoring/" class="md-nav__link">
         
   
   
@@ -884,7 +782,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../services/media/" class="md-nav__link">
+      <a href="../../services/media/" class="md-nav__link">
         
   
   
@@ -912,7 +810,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../services/immich/" class="md-nav__link">
+      <a href="../../services/immich/" class="md-nav__link">
         
   
   
@@ -940,7 +838,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../services/seerr/" class="md-nav__link">
+      <a href="../../services/seerr/" class="md-nav__link">
         
   
   
@@ -968,7 +866,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../services/wizarr/" class="md-nav__link">
+      <a href="../../services/wizarr/" class="md-nav__link">
         
   
   
@@ -996,7 +894,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../services/audiobookshelf/" class="md-nav__link">
+      <a href="../../services/audiobookshelf/" class="md-nav__link">
         
   
   
@@ -1024,7 +922,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../services/dawarich/" class="md-nav__link">
+      <a href="../../services/dawarich/" class="md-nav__link">
         
   
   
@@ -1052,7 +950,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../services/home-assistant/" class="md-nav__link">
+      <a href="../../services/home-assistant/" class="md-nav__link">
         
   
   
@@ -1080,7 +978,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../services/sage/" class="md-nav__link">
+      <a href="../../services/sage/" class="md-nav__link">
         
   
   
@@ -1108,7 +1006,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../services/automation/" class="md-nav__link">
+      <a href="../../services/automation/" class="md-nav__link">
         
   
   
@@ -1140,26 +1038,31 @@
       
   
   
+    
   
   
+  
     
     
     
     
+      
+        
+        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
             
   
   
@@ -1177,7 +1080,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1195,7 +1098,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/makefile/" class="md-nav__link">
+      <a href="../makefile/" class="md-nav__link">
         
   
   
@@ -1223,7 +1126,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/updates/" class="md-nav__link">
+      <a href="../updates/" class="md-nav__link">
         
   
   
@@ -1248,10 +1151,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../operations/backrest/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backups
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1267,6 +1197,92 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#role" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        💾 Role
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#guiding-principle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧭 Guiding Principle
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-two-repos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🗄️ The Two Repos
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-gets-backed-up-config-repo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📦 What Gets Backed Up (config repo)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🛠️ Configuration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔒 Security
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1279,7 +1295,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../operations/troubleshooting/" class="md-nav__link">
+      <a href="../troubleshooting/" class="md-nav__link">
         
   
   
@@ -1366,7 +1382,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../privacy/" class="md-nav__link">
+      <a href="../../privacy/" class="md-nav__link">
         
   
   
@@ -1394,7 +1410,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../terms/" class="md-nav__link">
+      <a href="../../terms/" class="md-nav__link">
         
   
   
@@ -1449,10 +1465,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#core-security-principles" class="md-nav__link">
+  <a href="#role" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🛡️ Core Security Principles
+        💾 Role
       
     </span>
   </a>
@@ -1460,10 +1476,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#network-layer-security-tailscale" class="md-nav__link">
+  <a href="#guiding-principle" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🔒 Network Layer Security (Tailscale)
+        🧭 Guiding Principle
       
     </span>
   </a>
@@ -1471,10 +1487,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#public-ingress-cloudflare-tunnel" class="md-nav__link">
+  <a href="#the-two-repos" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🌐 Public Ingress (Cloudflare Tunnel)
+        🗄️ The Two Repos
       
     </span>
   </a>
@@ -1482,10 +1498,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#secrets-management" class="md-nav__link">
+  <a href="#what-gets-backed-up-config-repo" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🔑 Secrets Management
+        📦 What Gets Backed Up (config repo)
       
     </span>
   </a>
@@ -1493,10 +1509,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#disaster-recovery-backups" class="md-nav__link">
+  <a href="#configuration" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🛡️ Disaster Recovery &amp; Backups
+        🛠️ Configuration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔒 Security
       
     </span>
   </a>
@@ -1523,47 +1550,106 @@
   
 
 
-<h1 id="security-model">Security Model<a class="headerlink" href="#security-model" title="Permanent link">&para;</a></h1>
-<p>The security of this homelab is built on a <strong>Zero-Trust Networking Architecture</strong>. This ensures that we do not trust any network by default—even our local home network—and we rely on verified identity and encryption for all communications.</p>
-<h2 id="core-security-principles">🛡️ Core Security Principles<a class="headerlink" href="#core-security-principles" title="Permanent link">&para;</a></h2>
-<ol>
-<li><strong>No Open Inbound Ports</strong>: No ports are forwarded on the internet-facing router. Inbound access arrives only through outbound-initiated tunnels — the Tailscale mesh for private services, and a Cloudflare Tunnel for the few publicly-published services.</li>
-<li><strong>Encrypted Mesh Networking</strong>: Every node is part of a <a href="https://tailscale.com">Tailscale</a> mesh network, providing end-to-end WireGuard® encryption.</li>
-<li><strong>Authenticated Access</strong>: All access is identity-gated — private services via Tailscale's OIDC/SSO, and publicly-published services via <a href="https://www.cloudflare.com/zero-trust/products/access/">Cloudflare Access</a> (Google OAuth SSO).</li>
-<li><strong>Least Privilege</strong>: Each Docker container runs with limited CPU/Memory resources and restricted network access where possible. Containers that need Docker visibility reach it through a read-only <strong>socket proxy</strong> rather than the raw Docker socket.</li>
-</ol>
-<hr />
-<h2 id="network-layer-security-tailscale">🔒 Network Layer Security (Tailscale)<a class="headerlink" href="#network-layer-security-tailscale" title="Permanent link">&para;</a></h2>
-<p>By using Tailscale, we eliminate the need for traditional VPN servers (like OpenVPN or IPsec) and their associated vulnerabilities.</p>
+<h1 id="backups-backrest">Backups (Backrest)<a class="headerlink" href="#backups-backrest" title="Permanent link">&para;</a></h1>
+<p><strong>Backrest</strong> is a web UI and orchestrator for <a href="https://restic.net/">Restic</a>, managing encrypted, deduplicated, incremental backups of the homelab to off-site object storage.</p>
+<h2 id="role">💾 Role<a class="headerlink" href="#role" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>MagicDNS</strong>: Internal services are accessed via human-readable hostnames that only resolve within the private mesh.</li>
-<li><strong>ACL Policies</strong>: Tailscale Access Control Lists (ACLs) can restrict which devices can talk to each other, even within the mesh.</li>
-<li><strong>HTTPS inside the Tunnel</strong>: We use a Reverse Proxy to provide valid SSL/TLS certificates for internal hostnames, ensuring traffic is encrypted even <em>after</em> it leaves the WireGuard tunnel.</li>
+<li><strong>Encrypted Backups</strong>: Restic encrypts every snapshot client-side before upload — the provider only ever sees ciphertext.</li>
+<li><strong>Two Tiers</strong>: A lean <strong>config repo</strong> on Cloudflare R2, and a separate <strong>photo-archive repo</strong> on Backblaze B2.</li>
+<li><strong>Scheduling &amp; Retention</strong>: Backrest handles schedules, retention/pruning, and integrity checks from one UI.</li>
+<li><strong>Access</strong>: <a href="http://backrest.ts.debdut.in">backrest.ts.debdut.in</a></li>
 </ul>
-<h2 id="public-ingress-cloudflare-tunnel">🌐 Public Ingress (Cloudflare Tunnel)<a class="headerlink" href="#public-ingress-cloudflare-tunnel" title="Permanent link">&para;</a></h2>
-<p>A small, deliberately-chosen subset of services is published to the public internet through a <a href="https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/">Cloudflare Tunnel</a> rather than the Tailscale mesh.</p>
+<h2 id="guiding-principle">🧭 Guiding Principle<a class="headerlink" href="#guiding-principle" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>Backrest exists to <strong>rebuild the homelab</strong> — configuration and small state, bounded in size. <strong>Not bulk media.</strong></p>
+</blockquote>
+<p>Jellyfin movies are never backed up (huge and re-acquirable). The same logic applies to Immich's photo/video <em>originals</em> — but unlike movies, personal photos are <strong>irreplaceable</strong>, so they get their own purpose-built cheap tier rather than being dumped into the config repo.</p>
+<h2 id="the-two-repos">🗄️ The Two Repos<a class="headerlink" href="#the-two-repos" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Repo</th>
+<th style="text-align: left;">Target</th>
+<th style="text-align: left;">Contents</th>
+<th style="text-align: left;">Plan schedule</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>config</strong></td>
+<td style="text-align: left;">Cloudflare <strong>R2</strong></td>
+<td style="text-align: left;">Whole <code>/userdata</code> config tree + Immich DB dumps</td>
+<td style="text-align: left;"><code>30 2 * * *</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>immich-photos-b2</strong></td>
+<td style="text-align: left;">Backblaze <strong>B2</strong></td>
+<td style="text-align: left;">Immich photo/video originals (<code>upload/library</code>)</td>
+<td style="text-align: left;"><code>0 3 * * *</code></td>
+</tr>
+</tbody>
+</table>
+<p>R2 is billed per-GB with <strong>free egress</strong> (handy for restoring configs); B2 is the cheapest restic-friendly bulk tier (~\$6/TB) for the growing photo library. The config repo is kept <strong>bounded (~10 GB)</strong> by aggressive excludes; the photo repo scales with the library.</p>
+<h2 id="what-gets-backed-up-config-repo">📦 What Gets Backed Up (config repo)<a class="headerlink" href="#what-gets-backed-up-config-repo" title="Permanent link">&para;</a></h2>
+<p>The homelab repository is mounted <strong>read-only</strong> at <code>/userdata</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>/Volumes/homelab/services/homelab  →  /userdata (ro)
+</code></pre></div>
+<p>Backing up the config tree means the whole stack reconstructs from a snapshot plus the secrets in <code>.envrc</code>. Deliberately <strong>excluded</strong> to keep it lean:</p>
 <ul>
-<li><strong>Outbound-Initiated</strong>: The <code>cloudflared</code> connector dials <em>out</em> to Cloudflare, so no inbound ports are opened on the home router — the "no open ports" guarantee still holds.</li>
-<li><strong>Identity-Gated</strong>: Every public hostname sits behind a <strong>Cloudflare Access</strong> application requiring <strong>Google OAuth SSO</strong>; unauthenticated requests never reach the origin service.</li>
-<li><strong>Hardened Connector</strong>: The container drops all Linux capabilities (<code>cap_drop: ALL</code>) and runs with <code>no-new-privileges</code>.</li>
+<li>Logs, caches, <code>__pycache__</code>, <code>*.tmp</code>, NPM certs</li>
+<li>Immich: <code>data/postgres</code> (live DB — unsafe hot-copy), <code>upload/thumbs</code>, <code>upload/encoded-video</code>, <code>upload/upload</code>, <code>upload/library</code> (originals → B2 instead), and <code>import/</code> (the transient Takeout zip)</li>
+<li>AdGuard <code>data/data</code> (query logs — churny, regeneratable)</li>
+<li>Actual importer message/SMS archives (<code>*.zip</code>)</li>
 </ul>
-<h2 id="secrets-management">🔑 Secrets Management<a class="headerlink" href="#secrets-management" title="Permanent link">&para;</a></h2>
-<p>We use a "Clean Repository" strategy to ensure that no sensitive data (API keys, passwords, tokens) is ever committed to version control.</p>
+<p>Immich's own nightly <strong>DB dump</strong> (<code>upload/backups/*.sql.gz</code>) <em>is</em> kept — that's the small, critical curation (albums, metadata, users).</p>
+<h2 id="configuration">🛠️ Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Setting</th>
+<th style="text-align: left;">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Internal Port</strong></td>
+<td style="text-align: left;">9898</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Config repo</strong></td>
+<td style="text-align: left;">Cloudflare R2 — creds <code>AWS_ACCESS_KEY_ID</code> / <code>AWS_SECRET_ACCESS_KEY</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Photo repo</strong></td>
+<td style="text-align: left;">Backblaze B2 — creds <code>B2_KEY_ID</code> / <code>B2_APP_KEY</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Encryption</strong></td>
+<td style="text-align: left;"><code>RESTIC_PASSWORD</code> (R2) · <code>B2_RESTIC_PASSWORD</code> (B2) — separate keys</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Retention (R2)</strong></td>
+<td style="text-align: left;">7 daily · 3 weekly · 2 monthly</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Retention (B2)</strong></td>
+<td style="text-align: left;">7 daily · 5 weekly · 12 monthly · 3 yearly</td>
+</tr>
+</tbody>
+</table>
+<h2 id="security">🔒 Security<a class="headerlink" href="#security" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Dynamic Environment Loading</strong>: All sensitive environment variables are loaded dynamically into the shell and injected into the container at runtime.</li>
-<li><strong>Consolidated Templates</strong>: Publicly available templates provide the structure of required variables without exposing actual values.</li>
-<li><strong>Container Isolation</strong>: Docker Compose files use variable interpolation, ensuring that secrets are only loaded from the host's protected environment.</li>
+<li>Source data is mounted <strong>read-only</strong> — Backrest cannot modify what it backs up.</li>
+<li>Restic encryption means both providers only ever see ciphertext (a zip that lands in the repo is stored as encrypted pack files, never a readable file).</li>
+<li><code>cap_drop: ALL</code>, <code>no-new-privileges</code>, 256 MB cap; reached only via Nginx Proxy Manager over Tailscale.</li>
 </ul>
-<h2 id="disaster-recovery-backups">🛡️ Disaster Recovery &amp; Backups<a class="headerlink" href="#disaster-recovery-backups" title="Permanent link">&para;</a></h2>
-<p>Security isn't just about preventing access—it's also about ensuring data integrity.</p>
-<ul>
-<li><strong>Configuration Backups</strong>: Application state and service configurations are backed up with <strong>Restic</strong> (managed via <strong>Backrest</strong>) to <strong>Cloudflare R2</strong> object storage off-site.</li>
-<li><strong>Infrastructure as Code</strong>: All service configurations (Prometheus YAML, Grafana Provisioning) are version-controlled, allowing the entire stack to be recreated from scratch in minutes.</li>
-</ul>
-<hr />
-<div class="admonition success">
-<p class="admonition-title">Security Audit Status</p>
-<p>This infrastructure is under continuous personal review. All dependencies are monitored for vulnerabilities using GitHub's automated security alerts.</p>
+<div class="admonition warning">
+<p class="admonition-title">Guard the Restic Passwords</p>
+<p><code>RESTIC_PASSWORD</code> (R2) and <code>B2_RESTIC_PASSWORD</code> (B2) are the <strong>only</strong> keys to their backups. Lose one and that repo is unrecoverable — the provider cannot help. Keep both stored independently of the homelab (password manager + offline copy).</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Reclaiming space</p>
+<p>Because restic deduplicates, an accidentally-backed-up large file isn't removed by simply excluding it going forward — it lingers in existing snapshots until they age out. To reclaim immediately: <code>restic forget &lt;snapshot&gt; --prune</code>, or <code>restic rewrite --exclude &lt;path&gt; --forget</code> to strip a path from <em>all</em> snapshots, then <code>prune</code>.</p>
 </div>
 
 
@@ -1620,10 +1706,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
       
